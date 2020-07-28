@@ -87,7 +87,15 @@ for i=1:length(soub)
             continue;
          end
 %         disp(s(1:4))
-         if strcmp(s(1:4),'gfct')
+         if strcmp(s(1:4),'gfc ')
+            cnm(n,m)=x(3);
+            snm(n,m)=x(4);
+            if (strcmp(header.errors, 'formal') || strcmp(header.errors,'calibrated') || strcmp(header.errors,'calibrated_and_formal')),
+               ecnm(n,m)=x(5);
+               esnm(n,m)=x(6);
+            end
+            i_gfc=i_gfc+1;
+         elseif strcmp(s(1:4),'gfct')
             if isempty(cnm_t0)
                [status, result] = grep('-c','gfct ', filename);
                i1=str2double(result.result);
@@ -108,14 +116,6 @@ for i=1:length(soub)
                ecnm(n,m)=x(5);
                esnm(n,m)=x(6);
             end
-         elseif strcmp(s(1:3),'gfc')
-            cnm(n,m)=x(3);
-            snm(n,m)=x(4);
-            if (strcmp(header.errors, 'formal') || strcmp(header.errors,'calibrated') || strcmp(header.errors,'calibrated_and_formal')),
-               ecnm(n,m)=x(5);
-               esnm(n,m)=x(6);
-            end
-            i_gfc=i_gfc+1;
          elseif strcmp(s(1:4),'trnd') || strcmp(s(1:3),'dot') 
             if isempty(cnm_trnd)
                [status, result] = grep('-c','trnd ', filename);
