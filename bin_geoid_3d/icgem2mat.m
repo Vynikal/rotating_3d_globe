@@ -43,10 +43,11 @@ for i=1:length(soub)
 
       % Read header
       fid=fopen(filename);
-      modelname=''; GM=0; ae=0; Lmax=0; errors=''; norm=''; tide='';
+      format=''; modelname=''; GM=0; ae=0; Lmax=0; errors=''; norm=''; tide='';
 
       s=fgets(fid);
       while(strncmp(s, 'end_of_head', 11) == 0 && sum(s)>=0)
+         if (strncmp(s, 'format', 6)), format=strtrim(s(6:end)); end;
          if (strncmp(s, 'product_type', 12)), product_type=strtrim(s(13:end)); end;
          if (strncmp(s, 'modelname', 9)), modelname=strtrim(s(10:end)); end;
          if (strncmp(s, 'earth_gravity_constant', 22)), GM=str2double(s(23:end)); end;
