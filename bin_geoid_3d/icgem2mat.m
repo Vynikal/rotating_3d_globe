@@ -88,8 +88,8 @@ for i=1:length(soub)
 %         disp(s(1:4))
          if strcmp(s(1:4),'gfct')
             if isempty(cnm_t0)
-               [status, result] =system(['grep -c gfct ' filename]);
-               i1=str2double(result);
+               [status, result] = grep('-c','gfct ', filename);
+               i1=str2double(result.result);
                if i1==0; error_ab('Problem with t0'); end
                cnm_t0=zeros(i1,3);
             end
@@ -117,9 +117,9 @@ for i=1:length(soub)
             i_gfc=i_gfc+1;
          elseif strcmp(s(1:4),'trnd') || strcmp(s(1:3),'dot') 
             if isempty(cnm_trnd)
-               [status, result] =system(['grep -c trnd ' filename]);
-               i1=str2double(result);
-               if i1==0; [status, result] =system(['grep -c dot ' filename]); i1=str2num(result); end
+               [status, result] = grep('-c','trnd ', filename);
+               i1=str2double(result.result);
+               if i1==0; [status, result] = grep('-c','dot ', filename); i1=str2double(result.result); end
                if i1==0; error_ab('Problem with trnd'); end
                cnm_trnd=zeros(i1,3); snm_trnd=cnm_trnd;
             end
@@ -128,8 +128,8 @@ for i=1:length(soub)
             snm_trnd(i_trnd,:)=[n m x(4)];
          elseif strcmp(s(1:4),'acos')
             if isempty(cnm_acos)
-               [status, result] =system(['grep -c acos ' filename]);
-               i1=str2double(result);
+               [status, result] = grep('-c','acos ', filename);
+               i1=str2double(result.result);
                if i1==0; error_ab('Problem with acos'); end
                cnm_acos=zeros(i1,4); snm_acos=cnm_acos;
             end
@@ -138,8 +138,8 @@ for i=1:length(soub)
             snm_acos(i_acos,:)=[n m x(4) x(end)];
          elseif strcmp(s(1:4),'asin')
             if isempty(cnm_asin)
-               [status, result] =system(['grep -c asin ' filename]);
-               i1=str2double(result);
+               [status, result] = grep('-c','asin ', filename);
+               i1=str2double(result.result);
                if i1==0; error_ab('Problem with asin'); end
                cnm_asin=zeros(i1,4); snm_asin=cnm_asin;
             end
