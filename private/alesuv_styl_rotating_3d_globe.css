@@ -1,0 +1,84 @@
+BODY
+	{
+	font-size: 10pt;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+
+.normal{
+	color: blue;
+	font-size: 11pt;
+}
+
+
+h1{
+	font-size: 24pt;
+	font-weight: bold;
+	}
+
+h2{
+	font-size: 18pt;
+	font-weight: bold;
+	}
+
+h3{ margin:0; padding:0; margin-bottom: 2pt;}
+h4{ margin:0; padding:0; margin-bottom: 2pt; margin-top: 2pt; } /* nedam se odsazeni od textu predtim, bez css by to byl hnusny dokument*/
+
+
+A:link    { color: blue; TEXT-DECORATION: underline}
+A:visited { color: blue; TEXT-DECORATION: underline}
+A:hover  { color: red; TEXT-DECORATION: underline}
+
+A.name1:hover  { color: black; TEXT-DECORATION: none}
+
+A.menu:link    { color: Blue; TEXT-DECORATION: none}
+A.menu:visited { color: BlueViolet; TEXT-DECORATION: none}
+A.menu:hover  { color: white; TEXT-DECORATION: none}
+
+
+A.hlavni:link    { color: #003399; TEXT-DECORATION: none}
+A.hlavni:visited { color: sienna; TEXT-DECORATION: none}
+A.hlavni:hover  { color: red; TEXT-DECORATION: none}
+
+A.hlavni_obce:link    { color: OrangeRed; TEXT-DECORATION: none}
+A.hlavni_obce:visited { color: sienna; TEXT-DECORATION: none}
+A.hlavni_obce:hover  { color: green; TEXT-DECORATION: none}
+
+A.hlavni2:link    { color: #003399; TEXT-DECORATION: none; font-weight: bold;}
+A.hlavni2:visited { color: BlueViolet; TEXT-DECORATION: none; font-weight: bold;}
+A.hlavni2:hover  { color: red; TEXT-DECORATION: none; font-weight: bold;}
+
+A.hlavni3:link{
+	background-color: skyblue;
+	padding: 2px;
+	TEXT-DECORATION: none;
+	color: blue;
+	font-weight: bold;
+	font-size: 11pt;}
+A.hlavni3:visited{
+	background-color: skyblue;
+	padding: 2px;
+	TEXT-DECORATION: none;
+	color: BlueViolet;
+	font-weight: bold;
+	font-size: 11pt;}
+A.hlavni3:hover{
+	background-color: #003399;
+	padding: 2px;
+	TEXT-DECORATION: none;
+	color: white;
+	font-weight: bold;
+	font-size: 11pt;}
+
+.odsazeny_odstavec{
+	margin-left: 20pt;
+	margin-top: 5pt;
+	}
+
+.odsazeny_odstavec1{
+	margin-left: 20pt;
+	line-height: 150%;
+	}
+
+span.a{font-family: monospace;}
+
+span.emph{color: #06FF06}

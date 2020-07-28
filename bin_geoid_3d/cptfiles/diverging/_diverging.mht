@@ -1,0 +1,1299 @@
+From: <Saved by UnMHT>
+Subject: =?iso-2022-jp?B?ZGl2ZXJnaW5n?=
+Date: Tue, Feb 28 2012 09:48:20 GMT+0100
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_0000_00C431E1.6D172B7B";
+	type="text/html"
+
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: text/html; charset="ISO-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/views/div.html
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv=3D"content-type" content=3D"text/html;charset=3DISO-8859=
+-1">
+  <title>diverging</title>
+  <meta name=3D"author" content=3D"J. J. Green">
+  <meta name=3D"robots" content=3D"index, follow">
+  <meta name=3D"copyright" content=3D"2008, J.J. Green">
+  <meta name=3D"description" content=3D"palettes for diverging data">
+  <meta name=3D"keywords" content=3D"gmt colour palette table cpt gradient">
+  <link type=3D"image/x-icon" href=3D"../theme/favicon.ico" rel=3D"icon"></=
+link>
+  <link type=3D"image/x-icon" href=3D"../theme/favicon.ico" rel=3D"shortcut=
+ icon"></link>
+  <link rel=3D"stylesheet" type=3D"text/css" href=3D"../theme/cpt-city.css"=
+ title=3D"cpt-city stylesheet"></link>
+<base href=3D"http://soliton.vm.bytemark.co.uk/pub/cpt-city/views/"></base>=
+</head>
+<body>
+<h1>cpt-city</h1>
+
+<ul class=3D"menu">
+  <li>
+  <a href=3D"../index.html">
+    <span class=3D"notranslate">cpt-city</span>
+  </a> |
+  </li>
+  <li>=20
+    <span class=3D"notranslate">div</span>
+  </li>
+  <li class=3D"up">
+    <a href=3D"..">up</a>
+  </li>
+</ul>
+<div class=3D"content">
+
+
+
+<p>
+Palettes for diverging, signed or anomoly data.  See also=20
+<a href=3D"../cb/div/">Cynthia Brewer</a>&#x27;s collection and its
+<a href=3D"../jjg/cbcont/div/">continuous</a>,
+<a href=3D"../jjg/cbac/div/">almost continuous</a> and
+<a href=3D"../jjg/polarity">polarity</a> versions.
+</p>
+
+<div class=3D"thumbs">
+  <div class=3D"thumb">
+    <a href=3D"../bhw/bhw2/tn/bhw2_39.png.index.html">
+      <img alt=3D"bhw2 39" src=3D"../bhw/bhw2/tn/bhw2_39.png">
+    </a>
+    <div class=3D"name">bhw2 39</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../cb/div/tn/BrBG_11.png.index.html">
+      <img alt=3D"BrBG 11" src=3D"../cb/div/tn/BrBG_11.png">
+    </a>
+    <div class=3D"name">BrBG 11</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../cw/1/tn/cw1-002.png.index.html">
+      <img alt=3D"cw1-002" src=3D"../cw/1/tn/cw1-002.png">
+    </a>
+    <div class=3D"name">cw1-002</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../es/landscape/tn/es_landscape_90.png.index.html">
+      <img alt=3D"es landscape 90" src=3D"../es/landscape/tn/es_landscape_9=
+0.png">
+    </a>
+    <div class=3D"name">es landscape 90</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../es/landscape/tn/es_landscape_76.png.index.html">
+      <img alt=3D"es landscape 76" src=3D"../es/landscape/tn/es_landscape_7=
+6.png">
+    </a>
+    <div class=3D"name">es landscape 76</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../esri/events/tn/fire_active_2.png.index.html">
+      <img alt=3D"fire active 2" src=3D"../esri/events/tn/fire_active_2.png=
+">
+    </a>
+    <div class=3D"name">fire active 2</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../gery/tn/seismic.png.index.html">
+      <img alt=3D"seismic" src=3D"../gery/tn/seismic.png">
+    </a>
+    <div class=3D"name">seismic</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../ggr/tn/French_flag_smooth.png.index.html">
+      <img alt=3D"French flag smooth" src=3D"../ggr/tn/French_flag_smooth.p=
+ng">
+    </a>
+    <div class=3D"name">French flag smooth</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../ggr/tn/Mexican_flag_smooth.png.index.html">
+      <img alt=3D"Mexican flag smooth" src=3D"../ggr/tn/Mexican_flag_smooth=
+.png">
+    </a>
+    <div class=3D"name">Mexican flag smooth</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../ggr/tn/Romanian_flag_smooth.png.index.html">
+      <img alt=3D"Romanian flag smooth" src=3D"../ggr/tn/Romanian_flag_smoo=
+th.png">
+    </a>
+    <div class=3D"name">Romanian flag smooth</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../grass/tn/curvature.png.index.html">
+      <img alt=3D"curvature" src=3D"../grass/tn/curvature.png">
+    </a>
+    <div class=3D"name">curvature</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../h5/tn/dkbluered.png.index.html">
+      <img alt=3D"dkbluered" src=3D"../h5/tn/dkbluered.png">
+    </a>
+    <div class=3D"name">dkbluered</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../jjg/misc/tn/voxpop.png.index.html">
+      <img alt=3D"voxpop" src=3D"../jjg/misc/tn/voxpop.png">
+    </a>
+    <div class=3D"name">voxpop</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../jjg/cbcont/div/tn/cbcBrBG.png.index.html">
+      <img alt=3D"cbcBrBG" src=3D"../jjg/cbcont/div/tn/cbcBrBG.png">
+    </a>
+    <div class=3D"name">cbcBrBG</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../jjg/cbac/div/tn/cbacBrBG11.png.index.html">
+      <img alt=3D"cbacBrBG11" src=3D"../jjg/cbac/div/tn/cbacBrBG11.png">
+    </a>
+    <div class=3D"name">cbacBrBG11</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../jjg/polarity/tn/BrBG.png.index.html">
+      <img alt=3D"BrBG" src=3D"../jjg/polarity/tn/BrBG.png">
+    </a>
+    <div class=3D"name">BrBG</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../jjg/ccolo/evad/tn/Andy_GIlmore_2.png.index.html">
+      <img alt=3D"Andy GIlmore 2" src=3D"../jjg/ccolo/evad/tn/Andy_GIlmore_=
+2.png">
+    </a>
+    <div class=3D"name">Andy GIlmore 2</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../jjg/ccolo/sugar/tn/Need_I_Say_More.png.index.html">
+      <img alt=3D"Need I Say More" src=3D"../jjg/ccolo/sugar/tn/Need_I_Say_=
+More.png">
+    </a>
+    <div class=3D"name">Need I Say More</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../jjg/ccolo/vredeling/tn/Grand_Boucle.png.index.html">
+      <img alt=3D"Grand Boucle" src=3D"../jjg/ccolo/vredeling/tn/Grand_Bouc=
+le.png">
+    </a>
+    <div class=3D"name">Grand Boucle</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../jjg/ccolo/vredeling/tn/Optimus_Prime.png.index.html">
+      <img alt=3D"Optimus Prime" src=3D"../jjg/ccolo/vredeling/tn/Optimus_P=
+rime.png">
+    </a>
+    <div class=3D"name">Optimus Prime</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../jjg/ccolo/vredeling/tn/British_Cheer.png.index.html">
+      <img alt=3D"British Cheer" src=3D"../jjg/ccolo/vredeling/tn/British_C=
+heer.png">
+    </a>
+    <div class=3D"name">British Cheer</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"..//jjg/ccolo/vredeling/tn/Tubular_Bells.png.index.html">
+      <img alt=3D"Tubular Bells" src=3D"..//jjg/ccolo/vredeling/tn/Tubular_=
+Bells.png">
+    </a>
+    <div class=3D"name">Tubular Bells</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../ma/xmas/tn/xmas_22.png.index.html">
+      <img alt=3D"xmas 22" src=3D"../ma/xmas/tn/xmas_22.png">
+    </a>
+    <div class=3D"name">xmas 22</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../ma/postcard/tn/ha_14.png.index.html">
+      <img alt=3D"ha 14" src=3D"../ma/postcard/tn/ha_14.png">
+    </a>
+    <div class=3D"name">ha 14</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../mjf/tn/departure.png.index.html">
+      <img alt=3D"departure" src=3D"../mjf/tn/departure.png">
+    </a>
+    <div class=3D"name">departure</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../nd/vermillion/tn/Split_02.png.index.html">
+      <img alt=3D"Split 02" src=3D"../nd/vermillion/tn/Split_02.png">
+    </a>
+    <div class=3D"name">Split 02</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../nd/vermillion/tn/Tertiary_01.png.index.html">
+      <img alt=3D"Tertiary 01" src=3D"../nd/vermillion/tn/Tertiary_01.png">
+    </a>
+    <div class=3D"name">Tertiary 01</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../nd/turanj/tn/Analogous_12b.png.index.html">
+      <img alt=3D"Analogous 12b" src=3D"../nd/turanj/tn/Analogous_12b.png">
+    </a>
+    <div class=3D"name">Analogous 12b</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../nd/red/tn/Primary_3.png.index.html">
+      <img alt=3D"Primary 3" src=3D"../nd/red/tn/Primary_3.png">
+    </a>
+    <div class=3D"name">Primary 3</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../occ/2/tn/occ100.png.index.html">
+      <img alt=3D"occ100" src=3D"../occ/2/tn/occ100.png">
+    </a>
+    <div class=3D"name">occ100</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../occ/2/tn/occ083.png.index.html">
+      <img alt=3D"occ083" src=3D"../occ/2/tn/occ083.png">
+    </a>
+    <div class=3D"name">occ083</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../rc/tn/wildwinds.png.index.html">
+      <img alt=3D"wildwinds" src=3D"../rc/tn/wildwinds.png">
+    </a>
+    <div class=3D"name">wildwinds</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../ncl/tn/temp_19lev.png.index.html">
+      <img alt=3D"temp 19lev" src=3D"../ncl/tn/temp_19lev.png">
+    </a>
+    <div class=3D"name">temp 19lev</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../ncl/tn/sunshine_diff_12lev.png.index.html">
+      <img alt=3D"sunshine diff 12lev" src=3D"../ncl/tn/sunshine_diff_12lev=
+.png">
+    </a>
+    <div class=3D"name">sunshine diff 12lev</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../ncl/tn/GreenYellow.png.index.html">
+      <img alt=3D"GreenYellow" src=3D"../ncl/tn/GreenYellow.png">
+    </a>
+    <div class=3D"name">GreenYellow</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../ncl/tn/BlueYellowRed.png.index.html">
+      <img alt=3D"BlueYellowRed" src=3D"../ncl/tn/BlueYellowRed.png">
+    </a>
+    <div class=3D"name">BlueYellowRed</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../ncl/tn/BlueWhiteOrangeRed.png.index.html">
+      <img alt=3D"BlueWhiteOrangeRed" src=3D"../ncl/tn/BlueWhiteOrangeRed.p=
+ng">
+    </a>
+    <div class=3D"name">BlueWhiteOrangeRed</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../ncl/tn/BlueDarkRed18.png.index.html">
+      <img alt=3D"BlueDarkRed18" src=3D"../ncl/tn/BlueDarkRed18.png">
+    </a>
+    <div class=3D"name">BlueDarkRed18</div>
+  </div>
+  <div class=3D"thumb">
+    <a href=3D"../ncl/tn/BlWhRe.png.index.html">
+      <img alt=3D"BlWhRe" src=3D"../ncl/tn/BlWhRe.png">
+    </a>
+    <div class=3D"name">BlWhRe</div>
+  </div>
+</div>
+
+<div class=3D"spacer">&nbsp;</div>
+
+
+</div>
+<div class=3D"address">
+  <div class=3D"validate">
+    Validate
+    <a title=3D"Check XHTML validity" href=3D"http://validator.w3.org/check=
+/referer">xhtml</a>
+    <a title=3D"Check CSS validity" href=3D"http://jigsaw.w3.org/css-valida=
+tor/check/referer">css</a>
+  </div>
+  <div class=3D"author">J.J. Green 2012</div>
+</div>
+
+
+
+</body></html>
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/x-icon
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/theme/favicon.ico
+
+AAABAAEAICAAAAAAAACoCAAAFgAAACgAAAAgAAAAQAAAAAEACAAAAAAAgAQAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAA////AD6slAC1tbUAN09JAFb/2gBtd3UASNa3AJCTkgA2hHMAzMzMABQUFABOYFwA
+MGxeAKOlpABP6sgAOzs7AICIhgBebGkAQ8apADmUgADCwsIAKkdBADBeVAA8oYoAPlhSAJycnABS
+9NEALFVMAFZmYwBL3r4Ac357ADRzZQC7u7sAiIuKADiNewBHXVgALU1GALCxsQBGy60AyMjIAFT5
+1QCnqKgANFNMADlaUwA1S0YAQLCXAEjStABAVFAAKlBIADJhVwCCi4kANVxUAE7nxQAwSkUAMFRM
+AHB5dwBfb2sAnJ+eADBpXADKysoAxMTEAL29vQCzs7MAhYyLAFP30wBMXlsAQ8irADmSfgBteXcA
+LEhCADVOSABEyq0ATl5aAGBtaQAsUEgAPKyUAMvLywDDw8MAurq6AD2rkwBebmoAVv7ZAFT41AA2
+S0cAS929AC9fVACkpKQAnJ6dADNzZQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAACxAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAsQCgoKCgoKCgoKCgoKCgoKCgoKCgoK
+CgoKCgoKCgoKEBAKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoQEAoKCgoKCgoKCgoKCgoK
+CgoKCgoKCgoKCgoKCgoKChAQCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKEBAKCgoKCgoK
+CgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoQEAoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKChAQ
+CgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKEBAKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoK
+CgoKCgoQEAoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKChAQCgoKCgoKCgoKCgoKCgoKCgoK
+CgoKCgoKCgoKCgoKEBAKCgoKCgoKCgoKCgoKCj4GMCs3BB1YCgoKCgoKCgoQEAoKCgoKCgoKCgoK
+CgpASxNBBQUFVQlCFQoKCgoKChAQCgoKCgoKCgoKCgoKDCNSBQUFBQUFBS8WJgoKCgoKEBAKCgoK
+CgoKCgoKCjNEBQUFBQUFBQUFBQ8tTQoKCgoQEAoKCgoKCgoKCgpPMVIFBQUFBQUFBQUFBS5FCgoK
+ChAQCgoKCgoKCgoKClEHBQUFBQUFBQUFBQUFBSUKCgoKEBAKCgoKCgoKCgoKGQUFBQUFBQUFBQUF
+BQUFWT8KCgoQEAoKCgoKCgoKCgo0BQUFBQUFBQUFBQUFBQVMIgoKChAQCgoKCgoKCgoKPDIFBQUF
+BQUFBQUFBQUFBUM4CgoKEBAKCgoKCgoKCgoKLAUFBQUFBQUFBQUFBQUFFBoKCgoQEAoKCgoKCgoK
+CgokUwUFBQUFBQUFBQUFBQVWTgoKChAQCgoKCgoKCgoKChEYBQUFBQUFBQUFBQUFG0cKCgoKEBAK
+CgoKCgoKCgoKTVQ1BQUFBQUFBQUFBQU7KgoKCgoQEAoKCgoKCgoKCgoKAxwpBQUFBQUFBQUFAkoK
+CgoKChAQCgoKCgoKCgoKCgoKOkYnBQUFBQUFGw0SPAoKCgoKEBAKCgoKCgoKCgoKCgoKPUkXFEge
+UCA2DgoKCgoKCgoQEAoKCgoKCgoKCgoKCgoKCihXHzkIIQoKCgoKCgoKChAQCgoKCgoKCgoKCgoK
+CgoKCgoKCgoKCgoKCgoKCgoKEBAKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoQEAoKCgoK
+CgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKChALEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ
+CwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAA
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/theme/cpt-city.css
+
+/*=20
+   cpt-city theme
+  =20
+   derived from Helmar Wieland's floating theme
+   $Id: cpt-city.css,v 1.38 2011/11/09 19:08:20 jjg Exp $
+*/
+
+/* base page style */
+
+body {=20
+  color: #000000;
+  background: #cccccc;
+  font-family: 'Lucida Grande', Verdana, Geneva, Lucida, Arial,=20
+  Helvetica, sans-serif;
+  font-size: 95%;
+  margin: 0px;
+  padding: 0px;
+}
+
+a:link {
+  color: #B85761;
+  text-decoration: none;
+}
+
+/*=20
+   for links to the gradients where the gradient
+   probaly wont work (too big etc), the same as=20
+   background grey (above) but this is in the (white)
+   image box
+*/
+
+a.badgradient:link {=20
+  color: #cccccc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #B85761;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #B85761;
+  text-decoration: none;
+}
+
+/* the header of all pages */
+
+h1 {=20
+  color: #203643;
+  background: #cccccc;
+  font-weight: bold;
+  letter-spacing: 5pt;
+  font-size: 130%;
+  text-align: right;
+  margin: 20px 4% 35px 0;    =20
+}=20
+
+div.translate {=20
+  float: left;
+  margin: 0px 0% 15px 1.7%;=20
+ }
+
+/* the navigation menu (parent folders) */=20
+
+ul.menu {
+  background: #CCE76E;
+  border-top: solid 1px #404822;
+  border-bottom: solid 1px #404822;
+  font-weight: bold;
+  letter-spacing: 1pt;
+  margin: 0px;
+  padding: 3px 0px 3px 4%;
+  color: #404822;
+  clear: left;
+}
+
+ul.menu li {
+  display: inline;
+  color: #404822;
+}
+
+ul.menu li a {
+  color: #404822;
+}
+
+ul.menu li.up {
+  position: absolute;
+  right: 4%;
+}
+
+/* the page's content */
+
+div.content { margin: 3% 4% 3% 4%; }=20
+
+h2 {=20
+  font-weight: bold;
+  font-size: 100%;
+  line-height: 130%;
+  color: #203643;
+  padding: 0;
+}
+
+p {
+  font-weight: normal;
+  font-size: 100%;
+  line-height: 130%;
+  color: #203643;
+  padding: 2px;
+}
+
+pre { =20
+  font-weight: normal;
+  color: #203643;
+}
+
+blockquote {=20
+  font-weight: normal;
+  color: #203643;
+ }
+
+dl {=20
+  color: #203643;=20
+}
+
+dt {=20
+  font-weight: normal;
+}
+
+dl {=20
+  color: #203643;=20
+}
+
+table {=20
+  color: #203643;=20
+}
+
+/* for body images, ideally 250px wide */
+
+div.body-image-right
+{ =20
+  width: 250px; =20
+  text-align: center;=20
+  float: right;=20
+  clear: right;
+  margin-left: 20px;
+}  =20
+
+div.body-image-right img
+{ =20
+  border: solid 1px #404822;=20
+  padding: 0px;
+} =20
+
+div.body-image-right p
+{  =20
+  margin: 7px 7px 14px 7px;
+  font-size: 80%;
+}
+
+div.body-image-right p.copyright
+{
+  font-size: 50%;
+}
+
+/* for body images, ideally 250px wide */
+
+div.time-series
+{ =20
+  margin-bottom: 20px;
+  clear: both;
+}  =20
+
+div.time-series img
+{
+  float: right;=20
+  clear: right;
+  border: none;=20
+  margin-left: 15px;
+  margin-bottom: 10px;
+} =20
+
+div.time-series p
+{  =20
+ =20
+}
+
+/*=20
+   the list of subfolders=20
+*/
+
+ul.list {
+  list-style-image: url("dot.png");=20
+  width: 60%;
+  position: relative;
+  left: 2%;
+}
+
+ul.list li {
+  line-height: 130%;
+  color: #203643;
+}
+
+/*=20
+   images have a border -- for thumb & palette anchor
+   images this converts to dashed on hover
+*/
+
+img {=20
+  border: 1px solid black;=20
+  padding: 0px;
+}
+
+div.thumb a:hover img {
+  border: 1px dashed black;
+}
+
+div.palette a:hover img {
+  border: 1px dashed black;
+}
+
+/*=20
+   the area of a single thumbnail=20
+
+   width needs to be specified so that the browser knows
+   how to arrange the other block elements, before the=20
+   thumbnail images actally arrive
+*/
+
+div.thumb {
+  float: left;
+  padding: 5px 5px 3px 5px;
+  margin: 10px;
+  width: 150px;
+}
+
+/* text below thumbnails and images */
+
+div div.caption, div.name {=20
+  color: black;
+  line-height: 130%;
+  text-align: center;
+  padding: 1px 4px;
+}
+
+/* color of links in captions */
+
+div a {=20
+  color: #B85761;
+}
+
+/* color of links in the headers/footers */
+
+p a {=20
+  color: #B85761;
+}
+
+/* text below thumbnails */
+
+div div.name {
+  font-size: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* the area all the thumbnails reside in */
+
+div.thumbs {
+  margin: 20px 20px 20px 20px;
+}
+
+
+/* table for image page */
+
+table.impage {
+  text-align: center;
+  color: #000000;
+  background: #cccccc;
+  width: 100%;
+  height: 100%;
+}
+
+td.align {            =20
+  vertical-align: middle;
+  text-align: center;=20
+}
+
+div.imcont {
+  position: relative;
+  margin: 0 auto;
+  width: 360px;
+  height:200px;
+  text-align: left; =20
+}
+
+/* table used for image page */=20
+
+table.imtab {=20
+  text-align: center;
+  vertical-align: middle;
+  background: #cccccc;
+  color: #000000;
+  width: 240px;
+  margin: 0;
+}
+
+table.imtab h2 {
+  font-size: 110%;
+  letter-spacing: 1pt;
+  padding: 4px 0px 2px 0px;
+  margin:0; =20
+}
+
+table.imtab h3 {
+  font-size: 70%;
+  font-weight: normal;
+  color: #203643;
+  padding: 2px 0px 3px 0px;
+  margin:0;
+}
+
+table.imtab p {
+  clear: both;
+  font-size: 90%;
+  padding:0;
+  margin:0;
+}
+
+table.imtab img {
+    background-repeat: no-repeat;
+    background-position: center;=20
+    background-image: url('chessboard.png');
+}
+
+div.palette img {
+    background-repeat: no-repeat;
+    background-position: center;=20
+    background-image: url('chessboard-small.png');
+}
+
+div.thumb img {
+    background-repeat: no-repeat;
+    background-position: center;=20
+    background-image: url('chessboard-small.png');
+}
+
+td.main {
+  background: white;
+  padding: 12px 12px 8px 12px; =20
+  border: 1px solid black;=20
+}
+
+td.prev, td.next { padding-top: 30px; }=20
+
+td.next a,p { padding-right: 0px; }
+td.next a   { float: right; }=20
+td.next p   { text-align: right; }
+
+td.prev a,p { padding-left: 0px; }
+td.prev a   { float: left; }
+td.prev p   { text-align: left; }
+
+/*=20
+   hack - for gecko-based browsers (which will collide the address=20
+   with the thumbnails without this intermediate spacer
+*/
+
+div.spacer {=20
+  clear:       both;
+  height:      0;
+  line-height: 0;
+}
+
+/*=20
+  the footer - we want left/right parts, so dispense
+  with the usual <address> environment=20
+*/
+
+div.address {
+  margin: 5% 4% 3% 4%;=20
+  font-size: 80%;
+  color: #203643;
+  font-style: normal;
+}
+
+div.validate {=20
+  float: left;
+}
+
+div.author {=20
+  float: right;
+  clear: right;=20
+}
+
+/* color of links in the footer */
+
+address a {=20
+  color: #B85761;
+}
+
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/theme/chessboard-small.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAAAAADRg9n7AAAAAXNSR0IArs4c6QAAAAlwSFlzAAAL
+EwAACxMBAJqcGAAAAAd0SU1FB9sLCRIZCDSMbuMAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRo
+IEdJTVBXgQ4XAAAAOUlEQVRIx2N8zcDAEMLAwLBmUNFMDIMSjDqLFMBoP+jSFQPDmtFIHBZpa7Tc
+Gk1bo+XWaCQOMWcBAGS/THEisHD+AAAAAElFTkSuQmCC
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/bhw/bhw2/tn/bhw2_39.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAA8ElEQVRo3u3SMZbDIAwE0BEG
+H2bvf5qUOYUhlrQF2MZ5LqNufoOEQNXI3+vtpTpKA0pzrNVx9GsbdZ1n475hzPzWi+NnJDlyMSxF
+sRQ965wVSzHk0s/b7OF9/2NYVkPO+/j7sPfcN3ZnRXKF1x1eP0Dde73tQPvAt95jzM96m+qqUBOo
+CtRSry099An7PNN0zXV6Z1+z8fdpr5lAvZ/u995MYP59JpjhvFNLMBe44epNYI7p/fFW4McuF6Tf
+xYDowmBRCAaLQjBYFILBohAMFoVgsCgEg0UhGCwKwWBRCAaLQjBYFILBohAMFoVgsCjEPyH/6xWr
+qPckAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDExLTExLTE1VDAwOjA3OjQwKzAxOjAw/AHkogAAACV0
+RVh0ZGF0ZTptb2RpZnkAMjAxMS0xMS0xNVQwMDowNzo0MCswMTowMI1cXB4AAAAASUVORK5CYII=
+
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/cb/div/tn/BrBG_11.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAzElEQVRo3u3STQtBQRiG4Xt8
+n3ykHMRCNvbK3q/wm23tlJVISZ2TFOqgxkL2M4t391z76XmbbreaVz0RvIe0VWI2KMc8A2A6GZD2
+OngfOukp1xJGiyWVpPkbDzyy3h7SHc+jb/SNCVT7QNiWA/LPi1PxjN7aZGcuzzvOueCtR/Fivd1R
+vN/BO845sjxnfzjE/8fpCLcrBN74V4peEgmgsMSEwhITCktMKCwxobDEhMISEwpLTCgsMaGwxITC
+EhMKS0woLDGhsMSEwhITX7a7LYspxALhAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDExLTExLTE1VDAw
+OjA3OjE0KzAxOjAwQK7O1QAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMS0xMS0xNVQwMDowNzoxNCsw
+MTowMDHzdmkAAAAASUVORK5CYII=
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/cw/1/tn/cw1-002.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAA1klEQVRo3u3SQXLDMAxD0U/o
+NLlVr9NLC11UsaUk7Y47vBmPTZGSvEA9vr6tKqRCEkPFkFD9fks6epIYdda66m3mrXfXY81qO38c
+ve3eOmfHNnvtrUKYwsjzfra6bMTWsykmw5Na9WtfnhRnLbb5VcumvM7a5z/c9/ms5xnGNtjYgA1m
+rd1v5ppjrU2OPdecjSfA1ptbz//su+55/Y8//m36WBMRDRKsaJFgRYsEK1okWNEiwYoWCVa0SLCi
+RYIVLRKsaJFgRYsEK1okWNEiwYoWCVa0+AH95rvBitO81gAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAx
+MS0xMS0xNVQwMDowNzoxMiswMTowMCN+++8AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTEtMTEtMTVU
+MDA6MDc6MTIrMDE6MDBSI0NTAAAAAElFTkSuQmCC
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/es/landscape/tn/es_landscape_90.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAzklEQVRo3u2SSw7DIAxEn8m5
+qp659wuZLgKEfNqdd/MkFJvxWESaeH3eiigUCiUKc11iodDu2omusevn+VlfLvt6Hz+8S/PG8N+8
+Q7+8q88+7l7O72r3//T48f9SUAUV7d8Nqlrdznrqz/U6zV19vV8ffMfu1m9QmWrd+1WiApsCCSCQ
+2gE0+r1GwUaAJo1Dn730HWPmPlswJgEHy6TgYJkUHCyTgoNlUnCwTAoOlknBwTIpOFgmBQfLpOBg
+mRQcLJOCg2VScLBMCg6WSeEL6JGQwWlGGAEAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTEtMTEtMTVU
+MDA6MDc6NDcrMDE6MDA5ptosAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDExLTExLTE1VDAwOjA3OjQ3
+KzAxOjAwSPtikAAAAABJRU5ErkJggg==
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/es/landscape/tn/es_landscape_76.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAyElEQVRo3u2SMRLCMAwE11TQ
+poR/wHt5Fi+BGRgfjZ0omAw06m6bSPJZSWa21NtVSEgCBKoggYRYalRbJpwPfW07Yn7Zqb6bcD5k
+4s6YCefhPWNff+T/+Ybv//Hcn3hMZ+7ThdfhCOygAECZi/ZsfaG0ss+XzHin5Uo4C7OtnWKs1W6q
+z8vnfCO3Me+15nadEev5DmMSsFgmBYtlUrBYJgWLZVKwWCYFi2VSsFgmBYtlUrBYJgWLZVKwWCYF
+i2VSsFgmBYtlUngDyVWtweTEVJkAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTEtMTEtMTVUMDA6MDc6
+NDYrMDE6MDCf0dGYAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDExLTExLTE1VDAwOjA3OjQ2KzAxOjAw
+7oxpJAAAAABJRU5ErkJggg==
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/esri/events/tn/fire_active_2.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAABEElEQVRo3u2SQW4EMQgEi8a8
+aP//r2THNjmMZ3YS5eobJVlItEEcyl6vV5qBuzAz3IUk3EWEA9CaMDtra0Kyu3f+B3cj4uqBGUQY
+7iAZEbZ25KpXBlIinZl70lrSGmvXvOfcEylXL4mYSElrc+39ZK2NVScRfc2NNTdwn0gTaSBN3PvK
+DiI6ZmdPmkS8kQbzgDyACRzA+NQckO+VXXW9K8sJfAH9dz7ff3Z24HtlHTIf2fVvnrfkeNzxyOYz
+6//MXb0/2X3z9W+uWzqQa1+e++/5510JAKIoNlBiFVsosYotlFjFFkqsYgslVrGFEqvYQolVbKHE
+KrZQYhVbKLGKLZRYxRZKrGILJVaxhRKr2MIP9OSHBYWtwpcAAAAldEVYdGRhdGU6Y3JlYXRlADIw
+MTEtMTEtMTVUMDA6MDc6MTkrMDE6MDAhea8VAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDExLTExLTE1
+VDAwOjA3OjE5KzAxOjAwUCQXqQAAAABJRU5ErkJggg==
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/gery/tn/seismic.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAA40lEQVRo3u3STQ6CMBCG4bdY
+MRiNC+MhCPe/iIdwb/y31LoYlYUxYTMrvychnSlQSvOF0rYFLyFA18F6DWXEZ0qB1Qo2m9/PzOew
+XH7PLxYwnQ59jNA0Q980MJlYXddWhwCzmY11DVVl1/t+jNa/1s0h8nhASrbV+93GlPjM52xzt5uN
+OVsNVl+vw5bOZ+j7oU8JjsfvXzsc4HT6fcSXC+x2444YbK/bLez39r6HymdZ+XcKlrhQsMSFgiUu
+FCxxoWCJCwVLXChY4kLBEhcKlrhQsMSFgiUuFCxxoWCJCwVLXDwB7Tg/bhrKM0MAAAAldEVYdGRh
+dGU6Y3JlYXRlADIwMTEtMTEtMzBUMTk6NDI6NDIrMDE6MDCJkesCAAAAJXRFWHRkYXRlOm1vZGlm
+eQAyMDExLTExLTMwVDE5OjQyOjQyKzAxOjAw+MxTvgAAAABJRU5ErkJggg==
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/ggr/tn/French_flag_smooth.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAdElEQVRo3u3SwQqAIBAA0TX9
+/y/W7CBBB6GEJjrMA0m29TYppd5Lich5nPP+xmxl5272h7db7BGtRdQ6vtf7bDb7/3Tvi7crO4uz
+LSSAYQlhWEIYlhCGJYRhCWFYQhiWEIYlhGEJYVhCGJYQhiWEYQlhWEIcLiGXIHLw2YYAAAAldEVY
+dGRhdGU6Y3JlYXRlADIwMTEtMTEtMTVUMDA6MDc6MTcrMDE6MDBxRtRIAAAAJXRFWHRkYXRlOm1v
+ZGlmeQAyMDExLTExLTE1VDAwOjA3OjE3KzAxOjAwABts9AAAAABJRU5ErkJggg==
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/ggr/tn/Mexican_flag_smooth.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAdElEQVRo3u3SMQ6AIBAAwQP5
+/4tBLNTEgkRJXGOxQyE5j25T6qmXKLEc57y/MZvZuZv94W1eI6K1iFr37/U+mo3+P9374u3MzuQs
+hwQwLCEMSwjDEsKwhDAsIQxLCMMSwrCEMCwhDEsIwxLCsIQwLCEMS4gNLyGXIJAmIR8AAAAldEVY
+dGRhdGU6Y3JlYXRlADIwMTEtMTEtMTVUMDA6MDc6MTcrMDE6MDBxRtRIAAAAJXRFWHRkYXRlOm1v
+ZGlmeQAyMDExLTExLTE1VDAwOjA3OjE3KzAxOjAwABts9AAAAABJRU5ErkJggg==
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/ggr/tn/Romanian_flag_smooth.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAjUlEQVRo3u3Suw6AIBBE0eHx
+/18MamFMQJFgMVb3NGyWJWwxIYRtz7kqpaKUqq76PNt61hu/zbl056g3u+vr55+rOz53u8/1M287
+RG1SlVR0nm096o3uV+f+ePtl5mMvCjAgWLAgWLAgWLAgWLAgWLAgWLAgWLAgWLAgWLAgWLAgWLAg
+WLAgWLAgWLA4AJ4blx8vsbScAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDExLTExLTE1VDAwOjA3OjE2
+KzAxOjAw1zHf/AAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMS0xMS0xNVQwMDowNzoxNiswMTowMKZs
+Z0AAAAAASUVORK5CYII=
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/grass/tn/curvature.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAlElEQVRo3u3SMQrCQBgF4dls
+WqOY0pNYekGv5GXSKl5Ak8IiItpEHzbzwQ/JssnCMgXKCC2PqczPn9be7fnm2yV7fvn/+b2pldWm
+0PWwfppuC/fDwJE9u9MAF+D8MtcCt7ro3P/dde7MBinAsBRhWIowLEUYliIMSxGGpQjDUoRhKcKw
+FGFYijAsRRiWIgxLEYaliAl/Dw8cg71MDQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMS0xMS0xNVQw
+MDowNzoyNCswMTowMM4hyTYAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTEtMTEtMTVUMDA6MDc6MjQr
+MDE6MDC/fHGKAAAAAElFTkSuQmCC
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/h5/tn/dkbluered.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAABD0lEQVRo3u2SQZLDIBADG2wG
+50H7/2clgG324InjD8xNXaWSRnBU2vibmULCyBQWjIyRKO5Xn/wP3uH3pADGdEFhUjzbnafn0/NJ
+4fD7cLGsrJZYLbPUzFoTpSbqC+oG9QXbI9t2qX5VvatX/srs4QZbgfqU/bK5agFbwFao7gsH7B2O
+5t5hNBjd1S719sujwfhcXe/QHn6rw8e7z1fevf1+fx65Mdtgtp2zHZx9Z/ad/YDO4soMFgaZTvI7
+eU6eufPw3L2/3qf30/9OBpPB6d3JuP1g+D04yQgRgIYlQtCwRAgalghBwxIhaFgiBA1LhKBhiRA0
+LBGChiVC0LBECBqWCEHDEiFoWCIEDUuE8A+KIJZen1QVMQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAx
+MS0xMS0xNVQwMDowNzoxOCswMTowMIcOpKEAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTEtMTEtMTVU
+MDA6MDc6MTgrMDE6MDD2UxwdAAAAAElFTkSuQmCC
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/jjg/misc/tn/voxpop.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAmUlEQVRo3u3SMQ7CMBBE0bFj
+JwWI+xdciRtwDeLCkZcrsEjT/devMnJ+eb7eoaR9q7rvPXum2950bDV1U0vR4+iqpfyxseU39qaj
+5TZusdRjpb8V56m4rtzRWlqfjxTJ3zanYoz8xjEUc6bvci8I/IiwYEFYsCAsWBAWLAgLFoQFC8KC
+BWHBgrBgQViwICxYEBYsCAsWhAWLL03dH5be9cXkAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDExLTEx
+LTE1VDAwOjA4OjAwKzAxOjAwiUCx1QAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMS0xMS0xNVQwMDow
+ODowMCswMTowMPgdCWkAAAAASUVORK5CYII=
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/jjg/cbcont/div/tn/cbcBrBG.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAABAklEQVRo3u3Sy3HDMAwE0CU+
+qifFpP9CRID0gVRka+IjbvtmMFiBOm77/fGJL6QBpg0mgAug2uACmKyb2d7XaIMroCowU5gqzGRv
+fbsL1O63dTeIHxB3qB87H1A/oHZ/ix9Q85VtjzpEHU38L4s6RA60600dIg6x9R+a7dG18Zb3TLne
+1h6tIedEzInEvPMcH/fnrY+BPhJ9JM5/80DP/MjnSJwR6BHosfL5lnsEzsi9173ve2QiIxA7x855
+5cfOTCADyAQyMePKz/3IY+Brd0BUgMWiEiwWlWCxqASLRSVYLCrBYlEJFotKsFhUgsWiEiwWlWCx
+qASLRSVYLCrBYlGJF/1dwIuAfTRnAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDExLTExLTE1VDAwOjA4
+OjAwKzAxOjAwiUCx1QAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMS0xMS0xNVQwMDowODowMCswMTow
+MPgdCWkAAAAASUVORK5CYII=
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/jjg/cbac/div/tn/cbacBrBG11.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAABRUlEQVRo3u3SPW4cMQyG4Zek
+BjvepHCRg+Qwuf8NAgSGvZjsiJ9SzGRtFy7V8QEEij/lZ79+LoMvuEE4hNlRHcKNtcH31Qg/5s3e
+d+HgbkQ4EXHMwvFwvl1X1stCuJ97x92JMCICawseDT+rtUYsF9bnH8TlgkXDY8Fbw1s7el+wCNwb
+Zg3zhkfgy5Xl6fmYf3jugXkDCyCOav7oR1zB10+z/zfC0AAx0BjkGCSDvxK37IhBnvsc41H7ECmx
+S0cv0ZX8uW/c+k4OnTOxn7ddomeyp8hM9ky6kvve+f3yyr33c5/0THoe93k+SY9/Smzbxuvb2/v8
+w14SKCETJEidtTO2G9zvn/fS8R9fRgenlAkqWGWKClaZooJVpqhglSkqWGWKClaZooJVpqhglSkq
+WGWKClaZooJVpqhglSkqWGWKClaZ4h+WkruLhlswzwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMS0x
+MS0xNVQwMDowNzo1NiswMTowMFN70QYAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTEtMTEtMTVUMDA6
+MDc6NTYrMDE6MDAiJmm6AAAAAElFTkSuQmCC
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/jjg/polarity/tn/BrBG.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAABCklEQVRo3u2Su20EMRBDOZ8F
+3IOrcDFu3o04OHHkQNo7wQ4cTcYHCBqK0m7y7PPjmmFAuCEca/2bj/nMYXB3RDgiDOEBd9vZV/fs
+dw57nnn4MQcsL3hc8ExYJDwSnhc8EpYJz4THtbp89a+85wiYJczXd8wTbnHk2Ge/su+7HnjEG77s
+Hd/TMarAWRi115xgEWMWRs29F1j1nM+dNTGKGCQGa+9rfpAguftX92Ct8/P+/ga5/sX9tu65Chxj
+5aNnFerujzdFAkWgai3eM5953l3x6P/edQjRgMQSLUgs0YLEEi1ILNGCxBItSCzRgsQSLUgs0YLE
+Ei1ILNGCxBItSCzRgsQSLUgs0cIPUO3Pjcwo4UwAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTEtMTEt
+MTVUMDA6MDc6NTgrMDE6MDADRKpbAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDExLTExLTE1VDAwOjA3
+OjU4KzAxOjAwchkS5wAAAABJRU5ErkJggg==
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/jjg/ccolo/evad/tn/Andy_GIlmore_2.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAA+klEQVRo3u3SPVLFMAwE4JWU
+OMVjoOFn4FTc/yAEiCVT2CaP16tiv5mMs7aSFFl5hzUkEBGoGlQEqgoTg6hCRUfuq8w8zvqM9awy
+5u18Tg1m1lddbvLNvS5nXlfYVmDbCiul35exN/PcK31u2Qq2h3tcXp9w9/aMy8sjQg0f+zf2/cDn
+14HqjoiGiIB7g3sgYq4Bvzqb2d3h1RG1r344vNYz/159r47Z8ECLQIx3hwfCve+N7zT3cd7G7NVz
+0f5mD7SW8vuhKW+lf4/FohQsFqVgsSgFi0UpWCxKwWJRChaLUrBYlILFohQsFqVgsSgFi0UpWCxK
+wWJRih9Amp9eFDq7rgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMS0xMS0xNVQwMDowODowMCswMTow
+MIlAsdUAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTEtMTEtMTVUMDA6MDg6MDArMDE6MDD4HQlpAAAA
+AElFTkSuQmCC
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/jjg/ccolo/sugar/tn/Need_I_Say_More.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAvUlEQVRo3u3SOw7CMBCE4X/W
+3I/zcG46nHgpYl6RoNs0zCdF+5KcZnS9nJMjhEACtJXYesS2f36g3fz9/nZrgSKgxfd+1nz0+7kF
+tEaeAk7t1bfGiKCnuKW4jc/aE3qKPsQy+3XulxQ9xTJgnfOaj36r65g7IBPyWUUC42P3NgOZ+nGD
+gXZvHiMO+o/9GQfLSjhYVsLBshIOlpVwsKyEg2UlHCwr4WBZCQfLSjhYVsLBshIOlpVwsKyEg2Ul
+7iw1XN+FvOujAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDExLTExLTE1VDAwOjA4OjAwKzAxOjAwiUCx
+1QAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMS0xMS0xNVQwMDowODowMCswMTowMPgdCWkAAAAASUVO
+RK5CYII=
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/jjg/ccolo/vredeling/tn/Grand_Boucle.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAzUlEQVRo3u3Suw3DMAwE0KNc
+2DNk/xkyWxoeU1iSxSRIYYDdPcCQxA/g4uz1fATususLA2B21dqojbctc2c/7+bZr1ra3WB2ALYD
+dsBaP20H2nHdlx5sP3daP5f5OTv3x2zuBTaQRJAgCbqDjPNOgvSlxzxL/tjN94jI7973MesO9/ye
+tdl38Meb7PWP2rz3uo9/d0fE/Wi025sifyhYUkLBkhIKlpRQsKSEgiUlFCwpoWBJCQVLSihYUkLB
+khIKlpRQsKSEgiUlFCwp8QaTb71+Z2sQYQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMS0xMS0xNVQw
+MDowNzo1OSswMTowMKUzoe8AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTEtMTEtMTVUMDA6MDc6NTkr
+MDE6MDDUbhlTAAAAAElFTkSuQmCC
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/jjg/ccolo/vredeling/tn/Optimus_Prime.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAA1UlEQVRo3u3Suw3DMAwE0CNl
+Z6hskBGy/xaSLaYQFfnbGGB3DzD0ISk3J+/P1/CUCEQU8G+317S7E0le85m7usqhf7zV9gLVhHlS
+vJK0dVJfN+ekl7VRv56d07hr/1DMXktWYbkAOQOlwHIGsq+l3bd6r1305fJ/w3xm+8aptxTUZUE1
+w2qGCmCtte39ru9PNT+3Pow3jnP9XG3zH4M9Twb0+SjRPQaLQjBYFILBohAMFoVgsCgEg0UhGCwK
+wWBRCAaLQjBYFILBohAMFoVgsCgEg0UhfhninssREkmoAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEx
+LTExLTE1VDAwOjA3OjU5KzAxOjAwpTOh7wAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMS0xMS0xNVQw
+MDowNzo1OSswMTowMNRuGVMAAAAASUVORK5CYII=
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/jjg/ccolo/vredeling/tn/British_Cheer.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAz0lEQVRo3u2SSw7DMAhEB/D1
+epdeqfe0oQtbDkmjLiKxmydFmM9k9eT9+gQeIiIQnZ+qQEzTW6Ca+tNboOs2Z1UFIiuX8zbze28C
+awFrmNUA3f2cqeG4sVm1Bdqqlvcpq3aZpSzg8NExxsBYdfZr1m9maXfOrtt+vv3J9g73AbgjwhHu
+iMj92HNc+n27c3OP2/9c+nAgHqsBfZwk5A8Ui5RAsUgJFIuUQLFICRSLlECxSAkUi5RAsUgJFIuU
+QLFICRSLlECxSAkUi5RAsUgJX7g5vSFYZXFYAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDExLTExLTE1
+VDAwOjA3OjU5KzAxOjAwpTOh7wAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMS0xMS0xNVQwMDowNzo1
+OSswMTowMNRuGVMAAAAASUVORK5CYII=
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city//jjg/ccolo/vredeling/tn/Tubular_Bells.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAA3UlEQVRo3u3SsQ7DIAwE0LMR
+/EY79f8/EB8dAkmTVh0iebsnRWA7Zjp7vJ4DN5kZzBzuBnffPnOYr16B2zGzOT//O+dW4L7eK8eb
+9r1bSkGtFa21eVbU2uZ51L9mp71aUVvbz6/e5W7m6BzoQcQ8ewz0GIggOlc9T87+6q3dU73uH/0Y
+l5ogB4IESUTEcWcg5pxxnW31dh/77j4jwYhtj5zvcN8f43Y04Lc3Rf5QsCSFgiUpFCxJoWBJCgVL
+UihYkkLBkhQKlqRQsCSFgiUpFCxJoWBJCgVLUihYkuINcUi2Rd73fyQAAAAldEVYdGRhdGU6Y3Jl
+YXRlADIwMTEtMTEtMTVUMDA6MDc6NTkrMDE6MDClM6HvAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDEx
+LTExLTE1VDAwOjA3OjU5KzAxOjAw1G4ZUwAAAABJRU5ErkJggg==
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/ma/xmas/tn/xmas_22.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAA2klEQVRo3u3SMbLDIAwE0JXI
+DL7/jXIrY4dVitgJTvy/K3X7GjEgAcXavZSwWuG1wmqFT9NrvdXDeppg33u1ArcbzB1w/9RSAHfA
+7LVXym/PVsf+05591uzf3st7rv61z369s88HAAZBEgyis4MkIgIk0aMfz4IIxqF3nB/rOEuen529
+81fv1Tvvu7Z/jj2P/kBbG9raMK8z2tLQls/6vbc2zMt8qPu+QySBgiUpFCxJoWBJCgVLUihYkkLB
+khQKlqRQsCSFgiUpFCxJoWBJCgVLUihYkkLBkhRPpX3gZ8xNcMIAAAAldEVYdGRhdGU6Y3JlYXRl
+ADIwMTEtMTEtMTVUMDA6MDc6NDUrMDE6MDCuOcsFAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDExLTEx
+LTE1VDAwOjA3OjQ1KzAxOjAw32RzuQAAAABJRU5ErkJggg==
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/ma/postcard/tn/ha_14.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAxUlEQVRo3u2SMXIEIQwEW/v/
+yIlfuzMOwDawd5cpm66iBAwCgi5/f9lVUAUFrmvWgqtG/V1XLZUlX7Ozd55de699fzvDc2+bw+jn
+Q378+W++9L7Mt/ePnMIjxfY+WNeAjWx4ZCM3xhoZj7vA0qhHBrPfmvXdHwzHO48/20j6Hxa6Z5Ww
+zK17zM+zZ9+ytowsLkJoIGKFFiJWaCFihRYiVmghYoUWIlZoIWKFFiJWaCFihRYiVmghYoUWIlZo
+IWKFFiJWaOEHVfromluh+rkAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTEtMTEtMTVUMDA6MDc6NDQr
+MDE6MDAITsCxAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDExLTExLTE1VDAwOjA3OjQ0KzAxOjAweRN4
+DQAAAABJRU5ErkJggg==
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/mjf/tn/departure.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAxElEQVRo3u3SsQrCMBRG4XOt
+0EED4lgwimtx8Rl85D5AH8GtOIl7J11r46ggYhTu9n9jCLlJOHbYknBkBlWAssjbnxLEGImrNSl9
+v1pKiRACdb2jKPKHlMuKsKrf1qezBfPNHrNJ1lEjIx0dN24Y9nw3RkvLiRMT8s4aGGho6OnzP/gC
+nOFl9GcGXIEjcM8f8Y+8F4v8SGGJC4UlLhSWuFBY4kJhiQuFJS4UlrhQWOJCYYkLhSUuFJa4UFji
+QmGJC4UlLh7wZiKfq7QnHwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMS0xMS0xNVQwMDowNzoxNisw
+MTowMNcx3/wAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTEtMTEtMTVUMDA6MDc6MTYrMDE6MDCmbGdA
+AAAAAElFTkSuQmCC
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/nd/vermillion/tn/Split_02.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAtUlEQVRo3u3SSxKDIBCE4R6O
+maPlrOBkoYaHMcmmd/9XZQkjMFjV8XhmRqQipIhUKalzfo5L0VEbxxrW9vpem8fXM+97/e679ljP
+urvjeO71jn/9e6bUNsXy7LWmaDnU2/E+9tQ+H79rmU/n1muvuefSt+5zfegz7xme2r+Vm7291t7r
+v96jbSoCDAgWLAgWLAgWLAgWLAgWLAgWLAgWLAgWLAgWLAgWLAgWLAgWLAgWLAgWLF6EHstsd5UR
+pQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMS0xMS0xNVQwMDowNzozNSswMTowMKT8whwAAAAldEVY
+dGRhdGU6bW9kaWZ5ADIwMTEtMTEtMTVUMDA6MDc6MzUrMDE6MDDVoXqgAAAAAElFTkSuQmCC
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/nd/vermillion/tn/Tertiary_01.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAtklEQVRo3u3SMRLDIAxEUS1w
+itz/mMhJERIbBrvb7r8Zj8EWEsVKr+OtmqHaQzWjbNalZqjt/n/f/5rrt3auz7rdmUvfNtc/z+pj
+xk2vu9ltd5/7c9O3OKKkxhPTuqZCy76kQqOu9mU/6rTUT/37Oudp7rd+7nvud2dLaprxdFa/O/Z9
+n+keqSgBGBAsWBAsWBAsWBAsWBAsWBAsWBAsWBAsWBAsWBAsWBAsWBAsWBAsWBAsWHwAdweXaqQM
+a0oAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTEtMTEtMTVUMDA6MDc6MzUrMDE6MDCk/MIcAAAAJXRF
+WHRkYXRlOm1vZGlmeQAyMDExLTExLTE1VDAwOjA3OjM1KzAxOjAw1aF6oAAAAABJRU5ErkJggg==
+
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/nd/turanj/tn/Analogous_12b.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAA1UlEQVRo3u3SS27DMAyE4Z+k
+jCJAgR4mF8y905pZyC8lNeANd/MZjklpgGzG8nFPLsvD7/n9WTKH/SyR/+b3+TOT9nmXh2f/vzx9
++t3MTALzMvXvn/3y5Am3YPr5Jm5f+NSw1vBpghZYczwCIjB3LAIL768Z1hx8ec16xg1zA+8ZbJ/N
+l/19tvdzgOM5ew627DpyPIcxt9rO1s+4b8uwj/x6qUSuU7GkhIolJVQsKaFiSQkVS0qoWFJCxZIS
+KpaUULGkhIolJVQsKaFiSQkVS0qoWFLiBTTvQYP6b24oAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEx
+LTExLTE1VDAwOjA3OjI4KzAxOjAwCYGjQgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMS0xMS0xNVQw
+MDowNzoyOCswMTowMHjcG/4AAAAASUVORK5CYII=
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/nd/red/tn/Primary_3.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAtUlEQVRo3u3SQQ7DIAxE0bG5
+ZY/Wu2K6KIlQmjTZzO4/CQUIGJAmXu8aGaVvG2rZtY1bzvntG12ZY/nf932ZpRZ9X9vWfTnHy9y2
+NmIcapVajnnWSa31Xmvt27rHO/4596RuRik0pAqp9G196VdI/aJfmuOLvXv/wdq72nd768k9nrxh
+/f/7hhRgQLBgQbBgQbBgQbBgQbBgQbBgQbBgQbBgQbBgQbBgQbBgQbBgQbBgQbBg8QG0Jpf2ie7F
+7gAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMS0xMS0xNVQwMDowNzozMSswMTowMFCz5g8AAAAldEVY
+dGRhdGU6bW9kaWZ5ADIwMTEtMTEtMTVUMDA6MDc6MzErMDE6MDAh7l6zAAAAAElFTkSuQmCC
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/occ/2/tn/occ100.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAuElEQVRo3u2SQQ6DMAwE1/5r
+v9G+vLgHQhJo4La3GQlhR4sdpIn351URof5keyuUkaOPUERqzuZf/5DN7HP3Pfn43eOsSx8ZSuX5
+/nfZ5Z1XO9sdNZ9Jqm1/tPW6VK3+SnNddcr1WpvqOOuZ703ddlx2jlnV8sesUdcqf62nfuyo28w6
+P5/v/58CMIBYYAGxwAJigQXEAguIBRYQCywgFlhALLCAWGABscACYoEFxAILiAUWEAss/ACKGoW1
+bH6HXQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMS0xMS0xNVQwMDowNzo0MCswMTowMPwB5KIAAAAl
+dEVYdGRhdGU6bW9kaWZ5ADIwMTEtMTEtMTVUMDA6MDc6NDArMDE6MDCNXFweAAAAAElFTkSuQmCC
+
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/occ/2/tn/occ083.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAtklEQVRo3u3SuxHCQBCDYYn+
+y6MCCqCFJbB9L994SJT9XwD23lqYGfn7eZdkyZLk88tqbJ2Hcpv3fQ37bvNrp+d4udeS5SnL7eg4
+WXOH35bPKP+Re3/+6T95M6/rNUqqftfPargeP0vTdi0PTGcPGevusV9z7pBxzOqWPefUfl6bd9i8
+Rw3L1+wlIIBiIYJiIYJiIYJiIYJiIYJiIYJiIYJiIYJiIYJiIYJiIYJiIYJiIYJiIeIHvwIy20sh
+7r0AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTEtMTEtMTVUMDA6MDc6NDArMDE6MDD8AeSiAAAAJXRF
+WHRkYXRlOm1vZGlmeQAyMDExLTExLTE1VDAwOjA3OjQwKzAxOjAwjVxcHgAAAABJRU5ErkJggg==
+
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/rc/tn/wildwinds.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAy0lEQVRo3u3STbLCMAwDYNnl
+QnAe7n8LS2+RBkIp8Dbe6ZvJUP8kbBT3600RgXGAiEBi1oGcfQQi5wyvc+B9PwKBWS/vv/SW/8vn
+OxmB3Lb9JLbH9zjf6vNZLvXlUP/n3bGvSJQAUigBRaCk/ReoQ5/8vbP2edr/fJ/SuFcEJZAEq0AS
+Ikf94YhEkdC+f5yd3lveLun07pwnzBo4WNbCwbIWDpa1cLCshYNlLRwsa+FgWQsHy1o4WNbCwbIW
+Dpa1cLCshYNlLRwsa/EHB5jI6gzmcwkAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTEtMTEtMTVUMDA6
+MDc6NDErMDE6MDBadu8WAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDExLTExLTE1VDAwOjA3OjQxKzAx
+OjAwKytXqgAAAABJRU5ErkJggg==
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/ncl/tn/temp_19lev.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAABBUlEQVRo3u3SsU7DMBRG4ePY
+UQJNoagMtEisfRPef2JiqNQOVakEErQKtSszdCPOeLf/myxZNzeJjmteXjNFGW4eoZ1fz/+FGve8
+glAXR6cPU7pZVx4NFYvFHSFUxc1d4+kaX7zz3vG0aPDeDddmWM5alvctubC39p7VfE7ty8+eBLgt
+X1HlzOTUU+WR39WfoD+W79KZy+YN0nl45xx8bGC/uZ4Hs4m8XkNKxdm4++K8+yzOppTZbo+kNHxn
+BxxS5BAjha3EnHm/XIgj3/sTf/mOPWMqRAwoLDGhsMSEwhITCktMKCwxobDEhMISEwpLTCgsMaGw
+xITCEhMKS0woLDGhsMTEH72gSX7VQU0oAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTAxLTIwVDIx
+OjAzOjU3KzAxOjAwtcN3dAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMi0wMS0yMFQyMTowMzo1Nysw
+MTowMMSez8gAAAAASUVORK5CYII=
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/ncl/tn/sunshine_diff_12lev.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAA10lEQVRo3u3STWoCQRCG4bda
+x5mgjuAPkqWQkAvkHILH8XC5QE7gwo0bkRERCUE0xs4RrCxq9z3rmp6i+7XF0zLjkMn0bMh7Maeg
+9HzA5LVH/VyRH/0hQ7trDN4SljzbQP3SohoZOLZvlVCNE5jv7P4s0amdw78nuKx9s9zh+wNuOx4v
+Y3Bu4LjyHZ2BBrg6Zs1gu4fVxnUn95/E4XPK7atw36HzGUX+R2FJCIUlIRSWhFBYEkJhSQiFJSEU
+loRQWBJCYUkIhSUhFJaEUFgSQmFJCIUlIf4A1csjS1CBLPoAAAAldEVYdGRhdGU6Y3JlYXRlADIw
+MTItMDEtMjBUMjE6MDM6NTcrMDE6MDC1w3d0AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDEyLTAxLTIw
+VDIxOjAzOjU3KzAxOjAwxJ7PyAAAAABJRU5ErkJggg==
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/ncl/tn/GreenYellow.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAAwklEQVRo3u2SQQrDIBBFvxp6
+h9Jb9f4XKSS1CyVmYlq6+bv3QBjHmVHhpXt91qKirKSirKys0lc+7VsuqfSoKIWaubbVjPrRP+L5
+nriP9425/705X/Rf9cZ/JC17tvXfJD300qJVVZukt6rektYet1yMt8O+rdrzdT8/ztpOZ3HWHH/r
+/T3r2DvPuv5HvONcM781C8AAYoEFxAILiAUWEAssIBZYQCywgFhgAbHAAmKBBcQCC4gFFhALLCAW
+WEAssPABIq1mGRcXNw4AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTItMDEtMjBUMjE6MDM6NTgrMDE6
+MDBDiwedAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDEyLTAxLTIwVDIxOjAzOjU4KzAxOjAwMta/IQAA
+AABJRU5ErkJggg==
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/ncl/tn/BlueYellowRed.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAABLElEQVRo3u3SPW5cMQxG0csf
+TbyKNF5RFp+dpAhGFOlCsmFPr44HIMhH6nWfjPc/hTnYQGzwOX+W2GPv/LF36oif2/iFuTHcMVfc
+DR+2d8Mw+75Thp/bw3E3zARTMBNUBVM5s/64mZ77mU0Ft1N6yhRXGCaY6tnt2zj/PkwYppgqJvud
+qeLfZhPBRHD9+e7Ngt9vf3H+QU6o5+75hHrtL7f1H/JJrUXV2j0X5O67YvfX2wpyTphJzaDmomZS
+z4BY53sXX3N8valIctWuSDKLjPO9koykFqzzrrL2HEUsiFTmEqKESCWWEiXMVCL3bp6+v4XnMpTW
+LuhgtSs6WO2KDla7ooPVruhgtSs6WO2KDla7ooPVruhgtSs6WO2KDla7ooPVruhgtSs6WO2KDy3M
+vOakJjJrAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTAxLTIwVDIxOjAzOjU3KzAxOjAwtcN3dAAA
+ACV0RVh0ZGF0ZTptb2RpZnkAMjAxMi0wMS0yMFQyMTowMzo1NyswMTowMMSez8gAAAAASUVORK5C
+YII=
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/ncl/tn/BlueWhiteOrangeRed.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAABH0lEQVRo3u3SOW7EMAyF4V9c
+PIfIFXKr3L9NbEk2U8jOLEWKAdTxAwRuroxXPj6/oqiBOkWNog7mFB3v2mPLuRu9+IK5YYtibqgr
+6ootdu4fdud3fnPclcUEM8FNcRXcZdSXnamwuHAzxQRcwApYKZgwXjnf2bsUtMBNQAW0jPmqItf8
+fJMCKgUrvCcaxEYcK0SFY4NYz9127sbMsRGxwv4NfYW+Udqo1/zYP93aD9RG1IAORzugQbT4q489
+HaIGsQV7haPBUWFvo792e41xa/dbX6HvQY+gRdA5awT1ZW7cv6txIG/+xpT+lcFKU2Sw0hQZrDRF
+BitNkcFKU2Sw0hQZrDRFBitNkcFKU2Sw0hQZrDRFBitNkcFKU2Sw0hS/ECqb4IcVXUsAAAAldEVY
+dGRhdGU6Y3JlYXRlADIwMTItMDEtMjBUMjE6MDQ6MDArMDE6MDDaWFznAAAAJXRFWHRkYXRlOm1v
+ZGlmeQAyMDEyLTAxLTIwVDIxOjA0OjAwKzAxOjAwqwXkWwAAAABJRU5ErkJggg==
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/ncl/tn/BlueDarkRed18.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAA60lEQVRo3u3SvU7DQBBF4eOR
+EyTiSFhBAhTKVLz/w0BHBAgUQCmMbJy11hS0O+mmu1+76/3zqXY8zpwxthtSs4a5MG2GujWahyVU
+5e8rg6sd1Kv/+aU1mmtY3zjjwGIJt1swK49fLGDbgnlnAO5WcFm7R2BjcF/772BkWo4Y2Z80vEL6
+pvwYFYw9fL37F80Z9m/Qj+UlpgxPH9AndwueO3j5cf9HnjKn48k9wgwcuokhZXeLz9/Evhs4xxAJ
+oLAkhMKSEApLQigsCaGwJITCkhAKS0IoLAmhsCSEwpIQCktCKCwJobAkhMKSEH/SuzvlNy86dQAA
+ACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMi0wMS0yMFQyMTowNDowMSswMTowMHwvV1MAAAAldEVYdGRh
+dGU6bW9kaWZ5ADIwMTItMDEtMjBUMjE6MDQ6MDErMDE6MDANcu/vAAAAAElFTkSuQmCC
+------=_NextPart_000_0000_00C431E1.6D172B7B
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://soliton.vm.bytemark.co.uk/pub/cpt-city/ncl/tn/BlWhRe.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJYAAAAQCAYAAAD06IYnAAAABmJLR0QA/gD+AP7rGNSCAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAACWAAAAEACUL1oGAAAA30lEQVRo3u2SwZKDIBBEnwrB
+/HX+OhAJ7gEJxtKcdm79qqbonhnhYA/wWGEA3FbjTjc/Af5kZ7r4Zjr0zubTha/nOA7MM5/yHkLo
++narOgS438G57o/7rd92mve+e+f6fgi19m/MM4wUiBFSqufrVXXzKUHOVccIy9JnMdbZ3qdUd/Z3
+5gzP5/cb+52mt1pLIQNv+JxNn/kMlIO+mr9P9petX37cuW5/XIh/R8ESJihYwgQFS5igYAkTFCxh
+goIlTFCwhAkKljBBwRImKFjCBAVLmKBgCRMULGGCgiVM+AP3N3KfLImwlAAAACV0RVh0ZGF0ZTpj
+cmVhdGUAMjAxMi0wMS0yMFQyMTowNDowMCswMTowMNpYXOcAAAAldEVYdGRhdGU6bW9kaWZ5ADIw
+MTItMDEtMjBUMjE6MDQ6MDArMDE6MDCrBeRbAAAAAElFTkSuQmCC
+------=_NextPart_000_0000_00C431E1.6D172B7B--

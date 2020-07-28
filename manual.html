@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<HTML>
+<!--
+@ nahradit vsude ../figures za celou webovou adresu (pred tim je rovnitko: =../)
+Pri offline praci opet nahradit zpet:
+http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures
+
+Resil jsem aktualizaci pri nahrani stranky, mnoho slozitych reseni, nefunkcnich, az nakonec ten prikaz onLoad=window.refresh, a je to.
+@@@ ktera tabulka je moc velka a rozsiruje okno?
+Vlastne to bude spis prehled voleb, proste je projdu, napisu manual, dam ho sem. Nebo opacne.
+Exaggeration factor
+Different colour scales
+Specify viewpoint (Produce a large poster with the Earth globe centred at your hometown) napr. taky Amerika
+With/without colorbar
+Smaller/larger labels
+No distortion of elevations, only the coloured sphere
+-->
+<head>
+<title>MATLAB script for 3D visualizing geodata on a rotating globe: manual</title>
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+  <LINK REL=StyleSheet TYPE="text/css" HREF="./private/alesuv_styl_rotating_3d_globe.css">
+</head>
+<body background="./private/trakare.gif" onLoad=window.refresh>
+<a class=name1 name=topp></a>
+
+<table width=840 border="1" cellpadding="15" cellspacing="0" align=center style="background-color: white; border-style: ridge; border-color: #06FF06;">
+<tr><td>
+<center>
+<h2>MATLAB script for 3D visualizing geodata on a rotating globe: <font color=red>MANUAL</font></h2>
+</center>
+
+<p>
+This is a user's guide to a free Matlab package <a href=../rotating_3d_globe.zip>rotating_3d_globe.zip</a>.
+To have an idea of images and animations that can be produced, have a look at the package website:
+<a href=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/ target=_blank>http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/</a>.
+It was our intention to prepare this package so that it can be used in a "copy and paste" style of programming.
+More eloquently: "Copy, paste and quickly modify according to your needs."
+
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+<tr><td valign=top>
+<div style="padding-left:15px">
+<a href=#instt>1. Installation of the package</a>
+<!--br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#testt>1.1. Running a test example</a-->
+
+<br><a href=#ownn>2. Making of 3D graphs step by step</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#et01>2.1. Earth topography: Getting started</a>
+<!--br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#et02>Earth topography: Omission of specifying the radius</a-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#et03>2.2. Earth topography: Label, larger image size and colorbar limits</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#et04>2.3. Earth topography: Slight exaggeration of elevation</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#et05>2.4. Earth topography: Draw data as colour scale on perfect sphere</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#et06>2.5. Earth topography: Changing the view point, zoom in, plot a point</a>
+<!--br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#et06>Earth topography: Changing the view point</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#et07>Earth topography: Changing the view point, zoom in</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#et08>Earth topography: Changing the view point, zoom in, more details (figure invisible)</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#et09>Earth topography: Changing the view point, plot a point</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#et10>Earth topography: Changing the view point, zoom in, plot a point (figure invisible)</a-->
+<!--br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#et11>Earth topography: Zoom in, coastlines and country boundaries</a-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#et11>2.6. Earth topography: Coastlines and country boundaries</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#et12>2.7. Earth topography: Adding grid lines</a>
+
+<br><a href=#animm>3. Making of 3D animations step by step</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#ett01>3.1. Earth topography in 3D as animated GIF: 36-degree segment, 1/10/20 fps</a>
+<!--br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#ett01>Earth topography in 3D as animated GIF: 36-degree segment, 1 fps</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#ett02>Earth topography in 3D as animated GIF: 36-degree segment, 10 fps</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#ett03>Earth topography in 3D as animated GIF: 36-degree segment, 20 fps</a-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#ett04>3.2. Earth topography in 3D as animated GIF: full revolution, smooth motion</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#ett05>3.3. Earth topography in 3D as video files: WMV, MP4, xvid AVI</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#ett06>3.4. Earth topography in 3D animation: PNG files for slideshow</a>
+
+<!--br><a href=#ghh>4. Making of 3D images/animation of geoid height</a-->
+<br><a href=#ghh>4. Geoid height in 3D image/animation</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#gh01>4.1. Selection of geopotential model and computation/loading of the grid values</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#gh02>4.2. Geoid height in 3D as PNG image</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#gh03>4.3. Geoid height in 3D as animated GIF/compressed video</a>
+<!--br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#gh04>Geoid height in 3D as animated GIF: full revolution, smooth motion</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#gh05>Geoid height in 3D as video files: WMV, MP4, xvid AVI</a-->
+
+<br><a href=#elevv>5. Elevation 2D maps</a>
+
+<br><a href=#parr>6. Optional arguments</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#clrr>6.1. Choosing and editing a colour scale</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#stl>6.2. Exporting STL file for 3D printers</a>
+
+<br><a href=#trbb>7. Troubleshooting</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#trbb1>7.1. An AVI video was produced instead of WMV</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#trbb2>7.2. Animated GIF was not created</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=#trbb3>7.3. Artefact line on a 3D image</a>
+</div>
+
+<td valign=top width=20>
+<td valign=top>
+<table border=0 cellpadding=0 cellspacing=0>
+
+<tr>
+<td valign=top>
+<a href=#ownn>
+<img width=150 align=top src=private/fig02/tn200_rotating_3d_globe_preview__px0500a.png>
+</a>
+<td width=10>
+<td valign=top>
+<a href=#et06>
+<img width=150 align=top src=private/fig02/tn200_rotating_3d_globe_preview_Earth_topography_ETOPO2_010arcmin_87_28_GMT_globe_px0650.png>
+</a>
+
+<tr>
+<td valign=top>
+<a href=#et09>
+<img width=150 align=top src=private/fig02/tn200_rotating_3d_globe_preview_Earth_topography_ETOPO2_010arcmin_14.5_50_GMT_globe_px0650.png>
+</a>
+<td width=10>
+<td valign=center align=center>
+<a href=#animm>
+<img align=top src=private/fig03/rotating_3d_globe__px0110_px0330_angle360_fps7_GMT_globe.gif>
+</a>
+
+<tr>
+<td valign=top>
+<a href=#ghh>
+<img width=150 align=top src=private/fig04/tn200_rotating_3d_globe_preview_Geoid_height_EGM2008_nmax500_BlueWhiteOrangeRed_px0650.png>
+</a>
+<td width=10>
+<td valign=center align=center>
+<a href=#gh04>
+<img align=top src=private/fig04/rotating_3d_globe__px0110_px0330_angle360_fps7_BlueWhiteOrangeRed.gif>
+</a>
+
+</table>
+
+</table>
+<br>
+<h3><a class=name1 name=instt>1. Installation of the package</a></h3>
+
+&clubs; First download the package <a href=../rotating_3d_globe.zip>rotating_3d_globe.zip</a>, unpack it
+and add the '.../rotating_3d_globe/bin_geoid_3d' subfolder to your Matlab path.
+This package contains also the data for the lower resolution images.
+
+<br>&clubs; For high resolution images, download <a href=../data_high_resolution.zip>data_high_resolution.zip</a> (122 MB) separately.
+To produce 3D images based on these data, you will need 4 GB of RAM memory.
+
+<br>&clubs; To create videos in compressed formats WMV, MP4, xvid AVI, download, install and add to your Matlab path: <a href=http://www.ffmpeg.org/ target=_blank>ffmpeg</a>.
+
+<br><br>
+<h4>Adding the package to the Matlab search path</a></h4>
+Modify and put the following line to your Matlab script or to your startup.m file:
+<pre>
+  addpath('REPLACE_BY_YOUR_PARTICULAR_FOLDER/rotating_3d_globe/bin_geoid_3d');
+</pre>
+<br>
+<h4><a class=name1 name=testt>Running a test example</a></h4>
+Copy some example code from the section
+<a href=../index.php#code target=_blank>Matlab scripts for all the examples</a>
+of the package website and paste the copied code into your Matlab command window, possibly press Enter.
+First the data should be read from a file and then a figure with the graph should open.
+Finally the output image or animation should be produced and saved to your current Matlab folder.
+
+<p>Let's take the first example: <a href=../index.php#1a target=_blank>Geoid height on 3D globe</a>.
+Copy and paste the code for loading the data:
+<pre>
+  %% Selection of geopotential model and computation/loading of the grid values
+  model='egm2008';  %nmax=2190
+  nmax=500;
+  % Computation of grid for the selected geopotential functional
+  [lond,latd,gh]=compute_geopot_grids(model,nmax,'functional','gh');
+</pre>
+
+If you use the code for the first time, there will be some time needed to compute the EGM2008 grid,
+next time this computed grid will be loaded quickly.
+The response in the Matlab command window should be something like:
+<pre>
+  -------------------------------
+  Model: egm2008, nmax=500, half-wave: 40 km
+  Grid step: 0.167 deg = 10 arcmin = 18.5 km
+  Compute_geopot_grids: geoid heights (m)
+  Normal field was subtracted.
+  Number of points: 2334960 = 2.3 mil = 0.0 mld
+  Time of computation: 4 sec = 0.1 min
+  Saved file: grid_egm2008_500_gh_010m_subtr1.mat
+</pre>
+
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+Now try to produce the 3D graph, copy and paste the following code:
+<pre>
+  %% Geoid height in 3D as PNG image
+  rotating_3d_globe(lond,latd,gh,'coastlines',1,...
+    'exaggeration_factor',1.3e4,'radius',6378e3,'units','m',...
+    'graph_label',...
+    sprintf('Geoid height (%s, nmax=%d)',upper(model),nmax),...
+    'clbr_limits',[-90 90],'clbr_tick',-100:20:100,...
+    'cptcmap_pm','BlueWhiteOrangeRed',...
+    'preview_figure_visible',1,...
+    'window_height',650);
+</pre>
+Your Matlab should open a figure with the graph; at the same time a png image is saved to the harddisk.
+<td valign=top>
+<a href=private/fig04/rotating_3d_globe_preview_Geoid_height_EGM2008_nmax500_BlueWhiteOrangeRed_px0650.png>
+<img src=private/fig04/tn200_rotating_3d_globe_preview_Geoid_height_EGM2008_nmax500_BlueWhiteOrangeRed_px0650.png>
+</a>
+</table>
+In the Matlab command line, a message should be displayed:
+<pre>
+  Function: ROTATING_3D_GLOBE
+  Elevation data:  min=-106, max=86.7
+  Preview PNG image has been created:
+     rotating_3d_globe_preview_Geoid_height_EGM2008_nmax500_BlueWhiteOrangeRed_px0650.png
+</pre>
+Each time the function <span class=a>rotating_3d_globe</span> is invoked, it outputs the maximum and minimum values of the elevation data,
+the name of the created png image is also reported.
+
+<p>If you encounter a problem, look at <a href=#troubb>Troubleshooting</a> section or contact me directly:
+<img src="private/email_normal_font_pruhledny.png" align="absbottom" border="0">.
+
+
+
+
+
+<br><br>
+<h3><a class=name1 name=ownn>2. Making of 3D graphs step by step</a></h3>
+This chapter provides an explanation of how to use the main function of the package
+<span class=a>rotate_3d_globe</span>.
+We demonstrate its basic usage on simple examples using the Earth topography data,
+which we chose because the topography of our home planet is familiar to all of us.
+<br>
+<br>
+<h4><a class=name1 name=et01>2.1. Earth topography: Getting started</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+Let's take the Earth topography data with the grid step of ten arcminutes.
+<br>First load the data (which are provided in the package):
+<pre>
+  %% Selection of Earth topographical data: 1 degree grid
+  model='ETOPO2_010arcmin';
+  fprintf('Loading Earth data: %s\n',model);
+  load (model);
+</pre>
+Now produce a simple 3D graph:
+<pre>
+  %% Earth topography: getting started
+  rotating_3d_globe(lond_etopo2,latd_etopo2,elev_etopo2_km,...
+     'radius',6378,'units','km');
+</pre>
+<td valign=top>
+<a href=private/fig02/rotating_3d_globe_preview__px0500a.png>
+<img src=private/fig02/tn200_rotating_3d_globe_preview__px0500a.png align=top>
+</a>
+</table>
+
+
+<br>The first three arguments of the function <span class=a>rotating_3d_globe</span>
+ are always the same:
+<pre style="margin: 2pt 0 2pt 0;">
+  rotating_3d_globe(lond,latd,elev,'radius',R,'units','km');
+</pre>
+where <span style="font-family: monospace;">lond</span> is vector of N longitudes
+and <span style="font-family: monospace;">latd</span>  a vector of M latitudes (both in degrees);
+the third parameter <span style="font-family: monospace;">elev</span>  is an M&times;N matrix with the elevation data.
+Then there follow two other arguments, <span class=a>'radius'</span> defines the radius <span class=a>R</span>,
+to which the <span class=a>elev</span> data are added and then visualized;
+the argument <span class=a>'units'</span> is used as the colorbar label.
+
+
+<br>
+<br>
+<h4><a class=name1 name=et02>Earth topography: Omission of specifying the radius</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+Do not forget to define an appropriate value for the <span class=a>'radius'</span>, onto which your elevation <br>
+data will be superposed for the surface plot,
+otherwise you get rather strange images!
+<pre>
+  %% Earth topography: omission of specifying the radius
+  model='ETOPO2_010arcmin'; load (model);
+  rotating_3d_globe(lond_etopo2,latd_etopo2,elev_etopo2_km);
+</pre>
+<td valign=top>
+<a href=private/fig02/rotating_3d_globe_preview__px0500.png>
+<img align=top src=private/fig02/tn200_rotating_3d_globe_preview__px0500.png>
+</a>
+</table>
+
+
+
+<br>
+<br>
+<h4><a class=name1 name=et03>2.2. Earth topography: Label, larger image size and colorbar limits</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+To add a descriptive text and to get nicer image colouring and an appropriate colorbar, use:
+<pre>
+  %% Earth topography: label, larger image size and colorbar limits
+  model='ETOPO2_010arcmin'; load (model);
+  rotating_3d_globe(lond_etopo2,latd_etopo2,elev_etopo2_km,...
+     'radius',6378,'units','km',...
+     'cptcmap_pm','GMT_globe',...
+     'clbr_limits',[-10 10],'clbr_tick',-10:2:10,...
+     'graph_label',sprintf('Earth topography (%s)',model),...
+     'window_height',650);
+</pre>
+<td valign=top>
+<a href=private/fig02/rotating_3d_globe_preview_Earth_topography_ETOPO2_010arcmin_GMT_globe_px0650a.png>
+<img  align=top src=private/fig02/tn200_rotating_3d_globe_preview_Earth_topography_ETOPO2_010arcmin_GMT_globe_px0650a.png>
+</a>
+</table>
+where the optional arguments modify the output:
+<br><span class=a>'graph_label'</span> is followed by the string for the label;
+<br><span class=a>'cptcmap_pm'</span> determines the color palette used (see <a href=http://www.mathworks.com/matlabcentral/fileexchange/28943 target=_blank>Color Palette Tables (.cpt) for Matlab</a>);
+for the Earth topography data to be represented reliably it is indispensable to use a specific colour scale (here "GMT_globe.cpt"),
+with other data one is free to choose arbitrary colour scale, see Section <a href=clrr>6.1. Choosing and editing a colour scale</a>;
+<br><span class=a>'clbr_limits'</span> and <span class=a>'clbr_tick'</span> specify the colorbar limits and ticks;
+<br>finally <span class=a>'window_height'</span> defines the figure window size, which is then used also for the png image produced.
+
+<br>
+<br>
+<h4><a class=name1 name=et04>2.3. Earth topography: Slight exaggeration of elevation</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+In the case of Earth topography data in ETOPO2, the <span class=a>elev</span> variations are under 10 kilometres,
+thus relative to the Earth radius 6378 km they are virtually invisible in the scale of our small globe.
+To make the 3D visualization more illustrative, some artificial exaggeration may be added:
+<pre>
+  %% Earth topography: slight exaggeration of elevation
+  model='ETOPO2_010arcmin'; load (model);
+  rotating_3d_globe(lond_etopo2,latd_etopo2,elev_etopo2_km,...
+     'exaggeration_factor',13,'radius',6378,'units','km',...
+     'cptcmap_pm','GMT_globe',...
+     'clbr_limits',[-10 10],'clbr_tick',-10:2:10,...
+     'graph_label',...
+     sprintf('Earth topography: exaggerated elevation (%s)',model),...
+     'window_height',650);
+</pre>
+<td valign=top>
+<a href=private/fig02/rotating_3d_globe_preview_Earth_topography_exaggerated_elevation_ETOPO2_010arcmin_GMT_globe_px0650b.png>
+<img align=top src=private/fig02/tn200_rotating_3d_globe_preview_Earth_topography_exaggerated_elevation_ETOPO2_010arcmin_GMT_globe_px0650b.png>
+</a>
+</table>
+A slight exaggeration is rather impressive with more detailed data and larger figure sizes, as e.g. in
+<a href=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/rotating_3d_globe_preview_Earth_topography_ETOPO2_004arcmin_GMT_globe_px3000.png
+target=_blank>
+our high resolution example image</a>
+of Earth topography, its Matlab code is
+<a href=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/#2e target=_blank>here</a>
+on the package website.
+
+<br>
+<br>
+<h4><a class=name1 name=et05>2.4. Earth topography: Draw data as colour scale on perfect sphere</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+On the contrary, if one needs only an image/animation of global data projected in colours on a perfect sphere,
+it is possible to define the spherical surface of constant radius and add the scalar <span class=a>elev</span> data
+only as information about the colour:
+<pre>
+  %% Earth topography: colour scale on a perfect sphere
+  model='ETOPO2_010arcmin'; load (model);
+  grid_of_ones=ones(size(elev_etopo2_km));  %unit sphere
+  rotating_3d_globe(lond_etopo2,latd_etopo2,grid_of_ones,...
+     'units','km',...
+     'elev_colour',elev_etopo2_km,...
+     'cptcmap_pm','GMT_globe',...
+     'clbr_limits',[-10 10],'clbr_tick',-10:2:10,...
+     'graph_label',...
+     sprintf('Earth topography: on perfect sphere (%s)',model),...
+     'window_height',650);
+</pre>
+<td valign=top>
+<a href=private/fig02/rotating_3d_globe_preview_Earth_topography_on_perfect_sphere_ETOPO2_010arcmin_GMT_globe_px0650.png>
+<img align=top src=private/fig02/tn200_rotating_3d_globe_preview_Earth_topography_on_perfect_sphere_ETOPO2_010arcmin_GMT_globe_px0650.png>
+</a>
+</table>
+
+
+<br>
+<br>
+<h4><a class=name1 name=et06>2.5. Earth topography: Changing the view point</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+It is possible to supply geographic coordinates of the view point, see this example:
+<pre>
+  %% Earth topography: changing the view point
+  % geographic coordinates of view point: Himalaya
+  latd_view_point=28;  %latitude (deg)
+  lond_view_point=87;  %longitude (deg)
+
+  model='ETOPO2_010arcmin'; load (model);
+  rotating_3d_globe(lond_etopo2,latd_etopo2,elev_etopo2_km,...
+     'exaggeration_factor',13,'radius',6378,'units','km',...
+     'cptcmap_pm','GMT_globe',...
+     'clbr_limits',[-10 10],'clbr_tick',-10:2:10,...
+     'graph_label',sprintf('Earth topography: (%s)',model),...
+     'azimuth',90+lond_view_point,'elevation',latd_view_point,...
+     'window_height',650);
+</pre>
+<td valign=top>
+<a href=private/fig02/rotating_3d_globe_preview_Earth_topography_ETOPO2_010arcmin_87_28_GMT_globe_px0650.png>
+<img align=top src=private/fig02/tn200_rotating_3d_globe_preview_Earth_topography_ETOPO2_010arcmin_87_28_GMT_globe_px0650.png>
+</a>
+</table>
+
+
+<br>
+<br>
+<h4><a class=name1 name=et07>Earth topography: Changing the view point, zoom in</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+Zooming can be easily implemented by changing the camera view angle (in degrees).
+<br>Try several values for <span class=a>view_angle</span>: 3 corresponds to regional view, 1 or 2 gets you more closer.
+<pre>
+  %% Earth topography: changing the view point, zoom in
+  % geographic coordinates of view point: Himalaya
+  latd_view_point=28;  %latitude (deg)
+  lond_view_point=87;  %longitude (deg)
+
+  % Zooming can be implemented by changing the camera view angle (in degrees).
+  % Try values: 3 corresponds to regional view, 1 or 2 gets you more closer
+  view_angle=3;
+
+  model='ETOPO2_010arcmin'; load (model);
+  %model='ETOPO2_004arcmin'; load (model);
+  rotating_3d_globe(lond_etopo2,latd_etopo2,elev_etopo2_km,...
+     'exaggeration_factor',13,'radius',6378,'units','km',...
+     'cptcmap_pm','GMT_globe',...
+     'clbr_limits',[-10 10],'clbr_tick',-10:2:10,...
+     'graph_label',sprintf('Earth topography: (%s)',model),...
+     'preview_figure_visible',1,...
+     'azimuth',90+lond_view_point,'elevation',latd_view_point,...
+     'view_angle',view_angle,...
+     'window_height',650);
+</pre>
+<td valign=top>
+<a href=private/fig02/rotating_3d_globe_preview_Earth_topography_ETOPO2_010arcmin_87_28_va3_GMT_globe_px0650.png>
+<img align=top src=private/fig02/tn200_rotating_3d_globe_preview_Earth_topography_ETOPO2_010arcmin_87_28_va3_GMT_globe_px0650.png>
+</a>
+</table>
+
+
+<br>
+<br>
+<h4><a class=name1 name=et08>Earth topography: Changing the view point, zoom in, more details (figure invisible)</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+This example is the same as the previous, only we choose data with finer resolution spatial resolution of 4 arcmin:
+<pre style="margin: 2pt 0 2pt 0;">
+  model='ETOPO2_004arcmin'; load (model);
+</pre>
+Because working with 4-arcmin data is more computationally intensive,
+to speed up the generation of the png image, it is better to let the figure window be invisible:
+<pre style="padding:0; margin:0">
+     'preview_figure_visible',0,...
+</pre>
+You can make your figure window again visible by typing:
+<pre style="padding:0; margin:0">
+  set(gcf,'visible','on')
+</pre>
+The default behaviour is to show the figure windows with png preview images and to hide the animation windows.
+<pre>
+  %% Earth topography: changing the view point, zoom in
+  % geographic coordinates of view point: Himalaya
+  latd_view_point=28;  %latitude (deg)
+  lond_view_point=87;  %longitude (deg)
+
+  % Zooming can be implemented by changing the camera view angle (in degrees).
+  % Try values: 3 corresponds to regional view, 1 or 2 gets you more closer
+  view_angle=3;
+
+  % model='ETOPO2_010arcmin'; load (model);
+  model='ETOPO2_004arcmin'; load (model);
+  rotating_3d_globe(lond_etopo2,latd_etopo2,elev_etopo2_km,...
+     'exaggeration_factor',13,'radius',6378,'units','km',...
+     'cptcmap_pm','GMT_globe',...
+     'clbr_limits',[-10 10],'clbr_tick',-10:2:10,...
+     'graph_label',sprintf('Earth topography: (%s)',model),...
+     'preview_figure_visible',0,...
+     'azimuth',90+lond_view_point,'elevation',latd_view_point,...
+     'view_angle',view_angle,...
+     'window_height',650);
+</pre>
+<td valign=top>
+<a href=private/fig02/rotating_3d_globe_preview_Earth_topography_ETOPO2_004arcmin_87_28_va3_GMT_globe_px0650.png>
+<img align=top src=private/fig02/tn200_rotating_3d_globe_preview_Earth_topography_ETOPO2_004arcmin_87_28_va3_GMT_globe_px0650.png>
+</a>
+</table>
+
+
+<br>
+<br>
+<h4><a class=name1 name=et09>Earth topography: Changing the view point, plot a point</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+Modifying the code below, you can plot the position and name of your hometown or other point of interest.
+<pre>
+  %% Earth topography: changing the view point, plot a point
+  % geographic coordinates of view point: Prague, Czech Republic
+  latd_view_point=50;  %latitude (deg)
+  lond_view_point=14.5;  %longitude (deg)
+
+  model='ETOPO2_010arcmin'; load (model);
+  [hc,hlab,name_png]=...
+     rotating_3d_globe(lond_etopo2,latd_etopo2,elev_etopo2_km,...
+     'exaggeration_factor',13,'radius',6378,'units','km',...
+     'cptcmap_pm','GMT_globe',...
+     'clbr_limits',[-10 10],'clbr_tick',-10:2:10,...
+     'graph_label',sprintf('Earth topography: (%s)',model),...
+     'azimuth',90+lond_view_point,'elevation',latd_view_point,...
+     'window_height',650);
+
+  % Plot and label the point
+  % we need to know 'exaggeration_factor' and 'radius' to place the point
+  %  on the displayed surface
+  exaggeration_factor=13;
+  radius=6378;
+  elev_view_point=interp2(lond_etopo2,latd_etopo2,elev_etopo2_km,...
+                          lond_view_point,latd_view_point);
+  r=radius/exaggeration_factor+elev_view_point;
+  [xx,yy,zz]=sph2cart(lond_view_point/rad,latd_view_point/rad,r);
+  hold on
+  plot3(xx,yy,zz,'r.','MarkerSize',13)
+  text(xx,yy,zz,' Prague','fontSize',12,'color','red','FontWeight','bold')
+  eval(sprintf('print -dpng -r0 %s;',name_png)); %save the figure again
+</pre>
+<td valign=top>
+<a href=private/fig02/rotating_3d_globe_preview_Earth_topography_ETOPO2_010arcmin_14.5_50_GMT_globe_px0650.png>
+<img align=top src=private/fig02/tn200_rotating_3d_globe_preview_Earth_topography_ETOPO2_010arcmin_14.5_50_GMT_globe_px0650.png>
+</a>
+</table>
+
+
+<br>
+<br>
+<h4><a class=name1 name=et10>Earth topography: Changing the view point, zoom in, plot a point (figure invisible)</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+As in the example above using 4-arcmin Earth topography data,
+to produce such a detailed image
+<br>it is faster to use an invisible figure window.
+<pre>
+  %% Earth topography: changing the view point, zoom in, plot a point
+  % geographic coordinates of view point: Prague, Czech Republic
+  latd_view_point=50;  %latitude (deg)
+  lond_view_point=14.5;  %longitude (deg)
+
+  % Zooming can be implemented by changing the camera view angle (in degrees).
+  % Try values: 3 corresponds to regional view, 1 or 2 gets you more closer
+  view_angle=2;
+
+  model='ETOPO2_004arcmin'; load (model);
+  [hc,hlab,name_png]=...
+     rotating_3d_globe(lond_etopo2,latd_etopo2,elev_etopo2_km,...
+     'exaggeration_factor',13,'radius',6378,'units','km',...
+     'cptcmap_pm','GMT_globe',...
+     'clbr_limits',[-10 10],'clbr_tick',-10:2:10,...
+     'graph_label',sprintf('Earth topography: (%s)',model),...
+     'preview_figure_visible',0,...
+     'azimuth',90+lond_view_point,'elevation',latd_view_point,...
+     'view_angle',view_angle,...
+     'window_height',650);
+
+  % Plot and label the point
+  % we need to know 'exaggeration_factor' and 'radius' to place the point
+  % on the displayed surface
+  exaggeration_factor=13;
+  radius=6378;
+  elev_view_point=interp2(lond_etopo2,latd_etopo2,elev_etopo2_km,...
+                          lond_view_point,latd_view_point);
+  r=radius/exaggeration_factor+elev_view_point;
+  [xx,yy,zz]=sph2cart(lond_view_point/rad,latd_view_point/rad,r);
+  hold on
+  plot3(xx,yy,zz,'r.','MarkerSize',13)
+  text(xx,yy,zz,' Prague','fontSize',12,'color','red','FontWeight','bold')
+  eval(sprintf('print -dpng -r0 %s;',name_png)); %save the figure again
+</pre>
+<td valign=top>
+<a href=private/fig02/rotating_3d_globe_preview_Earth_topography_ETOPO2_004arcmin_14.5_50_va2_GMT_globe_px0650.png>
+<img align=top src=private/fig02/tn200_rotating_3d_globe_preview_Earth_topography_ETOPO2_004arcmin_14.5_50_va2_GMT_globe_px0650.png>
+</a>
+</table>
+
+
+<br>
+<br>
+<h4><a class=name1 name=et11>2.6. Earth topography: Coastlines and country boundaries, zoom in, more details (figure invisible)</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+To include coastlines and country boundaries, simply add them as optional arguments:
+<pre style="margin: 2pt 0 2pt 0;">
+     'coastlines',1,...
+     'countries',1,...
+</pre>
+We use the data downloaded from
+<a href=http://www.naturalearthdata.com/ target=_blank>http://www.naturalearthdata.com/</a>.
+
+<pre>
+  %% Earth topography: zoom in, coastlines and country boundaries
+  % geodetic coordinates of view point: Potsdam, Germany
+  latd_view_point=52;
+  lond_view_point=13;
+
+  % Zooming can be implemented by changing the camera view angle (in degrees).
+  % Try values: 3 corresponds to regional view, 1 or 2 gets you more closer
+  view_angle=2;
+
+  model='ETOPO2_004arcmin'; load (model);
+  rotating_3d_globe(lond_etopo2,latd_etopo2,elev_etopo2_km,...
+     'exaggeration_factor',13,'radius',6378,'units','km',...
+     'coastlines',1,...
+     'countries',1,...
+     'cptcmap_pm','GMT_globe',...
+     'clbr_limits',[-10 10],'clbr_tick',-10:2:10,...
+     'graph_label',sprintf('Earth topography: (%s)',model),...
+     'preview_figure_visible',0,...
+     'azimuth',90+lond_view_point,'elevation',latd_view_point,...
+     'view_angle',view_angle,...
+     'window_height',650);
+</pre>
+<td valign=top>
+<a href=private/fig02/rotating_3d_globe_preview_Earth_topography_ETOPO2_004arcmin_13_52_va2_GMT_globe_px0650.png>
+<img align=top src=private/fig02/tn200_rotating_3d_globe_preview_Earth_topography_ETOPO2_004arcmin_13_52_va2_GMT_globe_px0650.png>
+</a>
+</table>
+
+
+<br>
+<br>
+<h4><a class=name1 name=et12>2.7. Earth topography: Adding grid lines</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+To add grid lines to the Earth's surface plot, one inserts the following line among the list of optional arguments:
+<pre style="margin: 2pt 0 2pt 0;">
+   'grid',1,...
+</pre>
+The default values for the step in longitudes is 60 deg, in latitude 30 deg, these can be modified:
+<pre style="margin: 2pt 0 2pt 0;">
+   'grid_lond',30,...
+   'grid_latd',15,...
+</pre>
+For the previous example showing data on a coloured perfect sphere, we can add the grid lines in this way:
+<pre>
+  %% Earth topography: colour scale on a perfect sphere + grid lines
+  model='ETOPO2_010arcmin'; load (model);
+  grid_of_ones=ones(size(elev_etopo2_km));  %unit sphere
+  rotating_3d_globe(lond_etopo2,latd_etopo2,grid_of_ones,...
+    'units','km',...
+    'elev_colour',elev_etopo2_km,...
+    'cptcmap_pm','GMT_globe',...
+    'clbr_limits',[-10 10],'clbr_tick',-10:2:10,...
+    'grid',1,...
+    'graph_label',...
+    sprintf('Earth topography: on perfect sphere + grid lines (%s)',model),...
+    'window_height',650);
+</pre>
+<td valign=top>
+<a href=private/fig02/rotating_3d_globe_preview_Earth_topography_on_perfect_sphere_-_grid_lines_ETOPO2_010arcmin_GMT_globe_px0650.png>
+<img align=top src=private/fig02/tn200_rotating_3d_globe_preview_Earth_topography_on_perfect_sphere_-_grid_lines_ETOPO2_010arcmin_GMT_globe_px0650.png>
+</a>
+</table>
+
+
+
+
+
+
+
+<br>
+<h3><a class=name1 name=animm>3. Making of 3D animations step by step</a></h3>
+<br>
+<h4><a class=name1 name=ett01>3.1. Earth topography in 3D as animated GIF: 36-degree segment, 1 fps</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+The usage of the function
+<span class=a>rotating_3d_globe</span>
+is the same as for still images, in order to produce animations, several optional arguments are needed:
+<pre style="margin: 2pt 0 2pt 0;">
+   'clbr_anim',1,'clbr_reduce',0.4,...
+</pre>
+parameter <span class=a>clbr_anim</span> sets whether (1) or not (0) the colorbar is produced in the animation window,
+<span class=a>clbr_reduce</span> sets the size reduction of the colorbar (the default value is 0.6).
+<br>If you want an animated gif to be produced:
+<pre style="margin: 2pt 0 2pt 0;">
+   'anim_gif',1,...
+</pre>
+Then
+<span class=a>anim_angle</span>
+sets the ending angle for the animated rotation (in degrees; full angle 360 deg, smaller angle is used for debugging, as here 36 deg).
+<pre style="margin: 2pt 0 2pt 0;">
+   'anim_angle',36,'time_for_360deg',42,'fps',1,...
+</pre>
+<span class=a>time_for_360deg</span> is the time for the animation to make a full rotation of 360 deg (in seconds)
+and <span class=a>fps</span> defines 'frames per second' of the video.
+In this example we choose 1 fps, which produces jerky rotational motion;
+on the other hand, all the details around the globe could be presented and the file size of the produced gif is small
+(200 kB with this 350-pixel gif for the 36-deg angle, therefore cca 2 MB for the full rotation of 360 degrees).
+
+<pre>
+%% Earth topography in 3D as animated GIF: 36-degree segment, 1 fps
+model='ETOPO2_010arcmin'; load (model);
+rotating_3d_globe(lond_etopo2,latd_etopo2,elev_etopo2_km,...
+   'exaggeration_factor',13,'radius',6378,'units','km',...
+   'cptcmap_pm','GMT_globe',...
+   'clbr_limits',[-10 10],'clbr_tick',-10:2:10,...
+   'graph_label',sprintf('Earth topography: (%s)',model),...
+   'preview_figure_visible',0,...
+   'clbr_anim',1,'clbr_reduce',0.4,...
+   'anim_gif',1,...
+   'anim_angle',36,'time_for_360deg',42,'fps',1,...
+   'window_height',350);
+</pre>
+<td valign=top>
+<a href=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/rotating_3d_globe_Earth_topography_ETOPO2_010arcmin_px0350_angle36_fps1_GMT_globe.gif>
+<img align=top src=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/tn200_rotating_3d_globe_preview_Earth_topography_ETOPO2_010arcmin_GMT_globe_px0350.png>
+</a>
+</table>
+
+<br>
+<br>
+<h4><a class=name1 name=ett02>Earth topography in 3D as animated GIF: 36-degree segment, 10 fps</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+We set a higher frame rate, 10 fps, which produces smoother rotation, still finite rotational steps are discernible.
+The file is 10 times bigger than with 1 fps.
+<pre>
+     'anim_angle',36,'time_for_360deg',42,'fps',10,...
+</pre>
+<td valign=top>
+<a href=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/rotating_3d_globe_Earth_topography_ETOPO2_010arcmin_px0350_angle36_fps10_GMT_globe.gif>
+<img align=top src=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/tn200_rotating_3d_globe_preview_Earth_topography_ETOPO2_010arcmin_GMT_globe_px0350.png>
+</a>
+</table>
+
+<br>
+<br>
+<h4><a class=name1 name=ett03>Earth topography in 3D as animated GIF: 36-degree segment, 20 fps, flickering</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+Setting the frame rate of 20 fps and higher results in smooth motion (cf. <a href=http://en.wikipedia.org/wiki/Frame_rate target=_blank>http://en.wikipedia.org/wiki/Frame_rate</a>).
+The problem here is the "flickering" or "twinkling" of the fine details in the animation; this problem is resolved in the following paragraph.
+<pre>
+     'anim_angle',36,'time_for_360deg',42,'fps',20,...
+</pre>
+<td valign=top>
+<a href=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/rotating_3d_globe_Earth_topography_ETOPO2_010arcmin_px0350_angle36_fps20_GMT_globe.gif>
+<img align=top src=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/tn200_rotating_3d_globe_preview_Earth_topography_ETOPO2_010arcmin_GMT_globe_px0350.png>
+</a>
+</table>
+
+<br>
+<br>
+<h4><a class=name1 name=ett03>Earth topography in 3D as animated GIF: 36-degree segment, 20 fps, smoothed</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+If the represented elevation data contain fine details, then a high-rate animation of fps>10 creates an unpleasant flickering of these details,
+as they change their position from one frame to another. We found a solution in using an intermediate larger window:
+<pre style="margin: 2pt 0 2pt 0;">
+     'window_height_intermediate',700,...
+</pre>
+Each frame is first produced with larger size, which is then slightly smoothed (in fact, this is an anti-aliasing filter) and then its size is reduced
+to the final dimensions. A factor of 2 or 3 for larger window seems satisfactory; so e.g. to obtain this 350-px animation, an intermediate window of 700 px was used.
+The rotational motion is now smooth and with an acceptable level of flickering.
+<pre>
+  %% Earth topography as animated GIF: 36-deg segment, 20 fps, smoothed
+  model='ETOPO2_010arcmin'; load (model);
+  rotating_3d_globe(lond_etopo2,latd_etopo2,elev_etopo2_km,...
+     'exaggeration_factor',13,'radius',6378,'units','km',...
+     'cptcmap_pm','GMT_globe',...
+     'clbr_limits',[-10 10],'clbr_tick',-10:2:10,...
+     'graph_label',sprintf('Earth topography: (%s)',model),...
+     'preview_figure_visible',0,...
+     'clbr_anim',1,'clbr_reduce',0.4,...
+     'anim_gif',1,...
+     'anim_angle',36,'time_for_360deg',42,'fps',20,...
+     'window_height_intermediate',700,...
+     'window_height',350);
+</pre>
+<td valign=top>
+<a href=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/rotating_3d_globe_Earth_topography_ETOPO2_010arcmin_px0350_px0700_angle36_fps20_GMT_globe.gif>
+<img align=top src=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/tn200_rotating_3d_globe_preview_Earth_topography_ETOPO2_010arcmin_GMT_globe_px0350_px0700.png>
+</a>
+</table>
+
+
+<br>
+<br>
+<h4><a class=name1 name=ett04>3.2. Earth topography in 3D as animated GIF: full revolution, smooth motion</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+This example illustrates all the features of producing an animated GIF described so far.
+To reduce the size of the file which should comprise the full animation angle of 360 deg, we chose it to be of "thumbnail" size 110 px.
+To avoid flickering, the size of intermediate window was set to be 330 px.
+Such a small image size allows one to decrease the rotation rate without making the motion too jerky, so we set
+<span class=a>fps</span> to 7. File size of this example: 2 MB.
+<pre>
+  %% Earth topography in 3D as animated GIF: full revolution, smooth motion
+  model='ETOPO2_030arcmin'; load (model);
+  rotating_3d_globe(lond_etopo2,latd_etopo2,elev_etopo2_km,...
+     'exaggeration_factor',13,'radius',6378,'units','km',...
+     'cptcmap_pm','GMT_globe',...
+     'clbr_limits',[-10 10],'clbr_tick',-10:2:10,...
+     'preview_figure_visible',0,...
+     'clbr_anim',0,...
+     'anim_gif',1,...
+     'anim_angle',360,'time_for_360deg',42,'fps',7,...
+     'window_height_intermediate',330,...
+     'window_height',110);
+</pre>
+<td valign=top>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href=private/fig03/rotating_3d_globe__px0110_px0330_angle360_fps7_GMT_globe.gif>
+<img align=top src=private/fig03/rotating_3d_globe__px0110_px0330_angle360_fps7_GMT_globe.gif>
+</a>
+</table>
+
+<br>
+<br>
+<h4><a class=name1 name=ett05>3.3. Earth topography in 3D as video files: WMV, MP4, xvid AVI</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+After the removal of flickering, the smoothed 36-deg portion of 20-fps animated gif has the size of 3.8 MB.
+A gif file with the full 360-deg rotation would have 38 MB, which is too much for use in presentations etc.
+To reduce the file size, smaller dimensions and fps may be used as in the previous point.
+Another possibility is to use a compressed video file instead of an animated gif,
+which has a comparable quality and significantly smaller size (14 MB in this example).
+Other choices for
+<span class=a>video_format</span> are 'wmv','mp4','xvid' for compressed video files,
+and 'uncomp' to save the animation in an uncompressed Matlab avi video file.
+
+<pre>
+  %% Earth topography in 3D as video files: WMV, MP4, xvid AVI
+  model='ETOPO2_010arcmin'; load (model);
+  rotating_3d_globe(lond_etopo2,latd_etopo2,elev_etopo2_km,...
+     'exaggeration_factor',13,'radius',6378,'units','km',...
+     'cptcmap_pm','GMT_globe',...
+     'clbr_limits',[-10 10],'clbr_tick',-10:2:10,...
+     'graph_label',sprintf('Earth topography: (%s)',model),...
+     'preview_figure_visible',0,...
+     'clbr_anim',1,'clbr_reduce',0.4,...
+     'video_format','wmv',...
+     'anim_gif',1,...
+     'anim_angle',360,'time_for_360deg',42,'fps',20,...
+     'window_height_intermediate',700,...
+     'font_size',27,...
+     'window_height',350);
+</pre>
+<td valign=top>
+<a href=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/rotating_3d_globe_Earth_topography_ETOPO2_010arcmin_px0350_px0700_angle360_fps20_GMT_globe.wmv>
+<img align=top src=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/tn200_rotating_3d_globe_preview_Earth_topography_ETOPO2_010arcmin_GMT_globe_px0350_px0700.png>
+</a>
+</table>
+
+<br>
+<br>
+<h4><a class=name1 name=ett06>3.4. Earth topography in 3D animation: PNG files for slideshow</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+Using the optional argument:
+<pre style="margin: 2pt 0 2pt 0;">
+     'anim_gif',2,...
+</pre>
+a folder is created, where the png images used for producing the animated gif are stored.
+Each png image has finer colour transitions due to higher colour depth of 24 bits compared to 8 bits of animated gifs.
+<pre>
+  %% Earth topography in 3D animation: PNG files for slideshow
+  model='ETOPO2_010arcmin'; load (model);
+  rotating_3d_globe(lond_etopo2,latd_etopo2,elev_etopo2_km,...
+     'exaggeration_factor',13,'radius',6378,'units','km',...
+     'cptcmap_pm','GMT_globe',...
+     'clbr_limits',[-10 10],'clbr_tick',-10:2:10,...
+     'graph_label',sprintf('Earth topography: (%s)',model),...
+     'preview_figure_visible',0,...
+     'clbr_anim',1,'clbr_reduce',0.4,...
+     'anim_gif',2,...
+     'anim_angle',360,'time_for_360deg',36,'fps',1,...
+     'window_height',500);
+</pre>
+<td valign=top width=50>&nbsp;
+<td valign=top>
+<a href=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/rotating_3d_globe_Earth_topography_ETOPO2_010arcmin_px0500_angle360_fps1_GMT_globe.zip>
+rotating_3d_globe_Earth_topography
+_ETOPO2_010arcmin_px0500
+_angle360_fps1_GMT_globe.zip
+</a>
+</table>
+
+
+
+
+
+<br>
+<br>
+<h3><a class=name1 name=ghh>4. Geoid height in 3D image/animation</a></h3>
+
+<br>
+<br>
+<h4><a class=name1 name=gh01>4.1. Selection of geopotential model and computation/loading of the grid values</a></h4>
+To visualize a gravity field model, we need a grid of the required geopotential functional computed from the given model.
+A model is defined by its harmonic coefficients (see the reference paper for details).
+The harmonic coefficients are saved in mat files named after the model.
+In the package, there are several models available, of different maximum resolution (stated in comments):
+<pre style="margin: 2pt 0 2pt 0;">
+  %% Selection of geopotential model and computation/loading of the grid values
+  % model='asu-ch-0309'; %nmax 120
+  % model='itg-grace2010s'; %nmax 180
+  % model='GOCO03S';  %nmax 250
+  model='egm2008';  %nmax=2190
+</pre>
+According to the spatial resolution of the model defined by its maximum degree 'nmax', the function <span class=a>compute_geopot_grids</span> selects
+a corresponding value for the step of the grid, also the vectors of longitudes and latitudes are output:
+<pre style="margin: 2pt 0 2pt 0;">
+  model='egm2008'; nmax=500;    %selection of geopotential model
+  [lond,latd,gh]=compute_geopot_grids(model,nmax,'functional','gh');
+</pre>
+An suitable spatial resolution of the 3D image determines the necessary maximum degree 'nmax', if available for the given model, for example:
+<pre style="margin: 2pt 0 2pt 0;">
+  nmax=180    grid_stepd*60 = 30 arcmin = 0.5 deg
+  nmax=500    grid_stepd*60 = 10 arcmin = 0.1666... deg
+  nmax=1000   grid_stepd*60 =  5 arcmin = 0.8333... deg
+</pre>
+For small images/animations of say 110 px, a grid of 0.5 deg is sufficient (nmax=180),
+for medium sized images of 300&ndash;1000 px a grid of 10 arcmin is adequate (nmax=500),
+for high-resolution images presented on the package website we used 4 or 5 arcmin data (nmax equal to 1100 or 1000),
+e.g.
+<a href=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/rotating_3d_globe_preview_Geoid_height_EGM2008_nmax1000_BlueWhiteOrangeRed_px3000.png
+target=_blank>
+high resolution example image</a>
+of geoid height, its Matlab code is
+<a href=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/#1e target=_blank>here</a>.
+
+<br>The computation of the grid needed for the visualization is done by invoking e.g.:
+<pre style="margin: 2pt 0 2pt 0;">
+   model='egm2008'; nmax=500;    %selection of geopotential model
+   [lond,latd,gh]=compute_geopot_grids(model,nmax,'functional','gh');
+</pre>
+The function
+<span class=a>compute_geopot_grids</span>
+ tests, whether the grid has already been computed and stored.
+  In the folder 'temp', the computed geopotential grids are stored for speeding up the execution of the function.
+  You may delete its contents if you wish.
+  We save only grids which took more than 'time_limit_to_save_grids' seconds to compute (the default is 1 sec).
+
+<br>
+<br>
+<br>
+<h4><a class=name1 name=>Reading geopotential coefficients from an ICGEM file</a></h4>
+We provide the user a possibility of using any of the gravity field models stored at
+<a href=http://icgem.gfz-potsdam.de/ICGEM/ICGEM.html target=_blank>ICGEM</a> website (click on 'Table of models' in the menu on the left).
+The downloaded gfc file is then transformed into our internal format by typing:
+<pre style="margin: 2pt 0 2pt 0;">
+  icgem2mat
+</pre>
+This function finds all the ICGEM files (*.gfc) in the current directory,
+reads the geopotential coefficients and transforms them into Matlab variables for much faster loading.
+The new mat file with the same name is moved into 'data_icgem' subdirectory;
+the original gfc file is moved into 'data_icgem/gfc/' subdirectory.
+Add the 'data_icgem' folder into your Matlab path.
+The model coefficients are then loaded by typing, e.g.
+<pre style="margin: 2pt 0 2pt 0;">
+  load egm2008
+</pre>
+
+<br>
+<br>
+<h4><a class=name1 name=gh02>4.2. Geoid height in 3D as PNG image</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+Usage and meaning of the optional arguments was explained in Section
+<a href=#ownn>2. Making of 3D graphs step by step</a>,
+computation of the grid for the geoid height in the previous section.
+<br>&clubs;
+For geoid heights, a rather large exaggeration factor 1.3e4 is usually applied to greatly emphasize the difference of the Earth shape with respect
+to the best fitting ellipsoid (for details, see the reference paper).
+<pre>
+  %% Geoid height in 3D as PNG image
+  model='egm2008'; nmax=500;    %selection of geopotential model
+  [lond,latd,gh]=compute_geopot_grids(model,nmax,'functional','gh');
+  [hc,hlab,name_png]=rotating_3d_globe(lond,latd,gh,'coastlines',1,...
+     'exaggeration_factor',1.3e4,'radius',6378e3,'units','m',...
+     'graph_label',...
+     sprintf('Geoid height (%s, nmax=%d)',upper(model),nmax),...
+     'clbr_limits',[-90 90],'clbr_tick',-100:20:100,...
+     'cptcmap_pm','BlueWhiteOrangeRed',...
+     'preview_figure_visible',1,...
+     'window_height',650);
+</pre>
+<td valign=top>
+<a href=private/fig04/rotating_3d_globe_preview_Geoid_height_EGM2008_nmax500_BlueWhiteOrangeRed_px0650.png>
+<img align=top src=private/fig04/tn200_rotating_3d_globe_preview_Geoid_height_EGM2008_nmax500_BlueWhiteOrangeRed_px0650.png>
+</a>
+</table>
+
+
+<br>
+<br>
+<h4><a class=name1 name=gh03>4.3. Geoid height in 3D as animated GIF/compressed video: 1 fps</a></h4>
+
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+An example of animation that can be used e.g. in a presentation, due to its relatively small size.
+A small frame rate 1 fps was taken for a medium sized window of 500 px, which produced an
+<a href=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/rotating_3d_globe_Geoid_height_EGM2008_nmax500_px0500_angle360_fps1_BlueWhiteOrangeRed.gif>animated gif</a>
+of 3.1 MB
+and a
+<a href=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/rotating_3d_globe_Geoid_height_EGM2008_nmax500_px0500_angle360_fps1_BlueWhiteOrangeRed.wmv>wmv compressed</a>
+animation of 2.4 MB.
+
+<pre>
+  %% Geoid height in 3D as animated GIF/compressed video: 1 fps
+  % jako ze to je vhodne napr. do prezentace
+  model='egm2008'; nmax=500;    %selection of geopotential model
+  [lond,latd,gh]=compute_geopot_grids(model,nmax,'functional','gh');
+  [hc,hlab,name_png]=rotating_3d_globe(lond,latd,gh,...
+     'coastlines',1,...
+     'exaggeration_factor',1.3e4,'radius',6378e3,'units','m',...
+     'cptcmap_pm','BlueWhiteOrangeRed',...
+     'graph_label',...
+     sprintf('Geoid height (%s, nmax=%d)',upper(model),nmax),...
+     'clbr_limits',[-90 90],'clbr_tick',-100:20:100,...
+     'preview_figure_visible',0,...
+     'clbr_anim',1,'clbr_reduce',0.4,...
+     'video_format','wmv',...
+     'anim_gif',1,...
+     'anim_angle',360,'time_for_360deg',42,'fps',1,...
+     'window_height',500);
+</pre>
+<td valign=top>
+<a href=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/rotating_3d_globe_Geoid_height_EGM2008_nmax500_px0500_angle360_fps1_BlueWhiteOrangeRed.gif>
+<img align=top src=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/tn200_rotating_3d_globe_preview_Geoid_height_EGM2008_nmax500_BlueWhiteOrangeRed_px0500.png>
+</a>
+</table>
+
+
+
+<br>
+<br>
+<h4><a class=name1 name=gh04>Geoid height in 3D as animated GIF: full revolution, smooth motion</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+The same "thumbnail" animation as is described above in Section
+<a href=#ett04>3.2</a> for Earth topography.
+<!--a href=#ett04>3.2. Earth topography in 3D as animated GIF: full revolution, smooth motion</a-->.
+<pre>
+  %% Geoid height in 3D as animated GIF: full revolution, smooth motion
+  model='egm2008'; nmax=180;    %selection of geopotential model
+  [lond,latd,gh]=compute_geopot_grids(model,nmax,'functional','gh');
+  [hc,hlab,name_png]=rotating_3d_globe(lond,latd,gh,...
+     'radius',6378e3,'units','m',...
+     'exaggeration_factor',1.3e4,...
+     'coastlines',1,...
+     'cptcmap_pm','BlueWhiteOrangeRed',...
+     'clbr_limits',[-90 90],'clbr_tick',-100:20:100,...
+     'preview_figure_visible',0,...
+     'clbr_anim',0,...
+     'anim_gif',1,...
+     'anim_angle',360,'time_for_360deg',42,'fps',7,...
+     'window_height_intermediate',330,...
+     'window_height',110);
+</pre>
+<td valign=top>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href=private/fig04/rotating_3d_globe__px0110_px0330_angle360_fps7_BlueWhiteOrangeRed.gif>
+<img align=top src=private/fig04/rotating_3d_globe__px0110_px0330_angle360_fps7_BlueWhiteOrangeRed.gif>
+</a>
+</table>
+
+<br>
+<br>
+<h4><a class=name1 name=gh05>Geoid height in 3D as video files: WMV, MP4, xvid AVI</a></h4>
+This is an example of smoothly rotating geoid, whose definition and properties are described above in
+<a href=#ett05>Section 3.3</a> for Earth topography.
+As above, for this smooth animation covering the full 360-deg rotation angle, with high time resolution of 20 fps,
+the size of the wmv file is 13 MB, much smaller than the corresponding animated gif of 37 MB.
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+<pre>
+  %% Geoid height in 3D as video files: WMV, MP4, xvid AVI
+  model='egm2008'; nmax=500;    %selection of geopotential model
+  [lond,latd,gh]=compute_geopot_grids(model,nmax,'functional','gh');
+  [hc,hlab,name_png]=rotating_3d_globe(lond,latd,gh,...
+     'coastlines',1,...
+     'exaggeration_factor',1.3e4,'radius',6378e3,'units','m',...
+     'cptcmap_pm','BlueWhiteOrangeRed',...
+     'graph_label',...
+     sprintf('Geoid height (%s, nmax=%d)',upper(model),nmax),...
+     'clbr_limits',[-90 90],'clbr_tick',-100:20:100,...
+     'preview_figure_visible',0,...
+     'clbr_anim',1,'clbr_reduce',0.4,...
+     'video_format','wmv',...
+     'anim_gif',1,...
+     'anim_angle',360,'time_for_360deg',42,'fps',20,...
+     'window_height_intermediate',700,...
+     'font_size',27,...
+     'window_height',350);
+</pre>
+<td valign=top>
+<a href=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/rotating_3d_globe_Geoid_height_EGM2008_nmax500_px0350_px0700_angle360_fps20_BlueWhiteOrangeRed.wmv>
+<img align=top src=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/tn200_rotating_3d_globe_preview_Geoid_height_EGM2008_nmax500_BlueWhiteOrangeRed_px0350_px0700.png>
+</a>
+</table>
+
+
+
+
+
+<br>
+<br>
+<h3><a class=name1 name=elevv>5. Elevation 2D maps</a></h3>
+We provide the functionality of creating 2D elevation maps only as an addendum to our main 3D visualization function
+<span class=a>compute_geopot_grids</span>, because often it is useful to project the elevation data also to a 2D map.
+Our 2D calling function
+<span class=a>elevation_2d_map</span>
+shares the basic syntax with the 3D function <span class=a>compute_geopot_grids</span>,
+but in fact it serves only as a wrapper, which uses
+<a href=http://www2.ocgy.ubc.ca/~rich/map.html target=_blank>M_Map: A mapping package for Matlab</a>.
+
+<br>
+<br>
+<h4><a class=name1 name=>Earth topography as 2D map</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+Usage of our 2D mapping function is fully analogous to 3D visualization function as explained above in
+Section <a href=#ownn>2. Making of 3D graphs step by step</a>.
+As explained in
+the <a href=#et08>section</a> about zooming the detailed Earth topography data,
+for speeding up the generation of the png file, we set the figure window as invisible.
+<pre>
+  %% Earth topography as 2D map
+  model='ETOPO2_010arcmin'; load (model);
+  elevation_2d_map(lond_etopo2,latd_etopo2,elev_etopo2_km,...
+     'coastlines',1,...
+     'units','km',...
+     'graph_label',sprintf('Earth topography (%s)',model),...
+     'clbr_limits',[-10 10],'clbr_tick',-10:2:10,...
+     'cptcmap_pm','GMT_globe',...
+     'preview_figure_visible',0,...
+     'window_height',650);
+</pre>
+<td valign=top>
+<a href=private/fig05/elevation_2d_map_Earth_topography_ETOPO2_010arcmin_GMT_globe_px0650.png>
+<img align=top src=private/fig05/tn200_elevation_2d_map_Earth_topography_ETOPO2_010arcmin_GMT_globe_px0650.png>
+</a>
+</table>
+
+<br>
+<br>
+<h4><a class=name1 name=>Earth topography as 2D map (centred on the Pacific)</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+This example shows how to change the view point to the Pacific rather than to the Greenwich meridian (default).
+<pre>
+  %% Earth topography as 2D map (centred on the Pacific)
+  model='ETOPO2_010arcmin'; load (model);
+  elevation_2d_map(lond_etopo2,latd_etopo2,elev_etopo2_km,...
+     'map_center','Pacific',...
+     'coastlines',1,...
+     'units','km',...
+     'graph_label',sprintf('Earth topography (%s)',model),...
+     'clbr_limits',[-10 10],'clbr_tick',-10:2:10,...
+     'cptcmap_pm','GMT_globe',...
+     'preview_figure_visible',0,...
+     'window_height',650);
+</pre>
+<td valign=top>
+<a href=private/fig05/elevation_2d_map_Earth_topography_ETOPO2_010arcmin_GMT_globe_px0650_pacific.png>
+<img align=top src=private/fig05/tn200_elevation_2d_map_Earth_topography_ETOPO2_010arcmin_GMT_globe_px0650_pacific.png>
+</a>
+</table>
+
+
+
+
+<br>
+<h3><a class=name1 name=parr>6. Optional arguments</a></h3>
+All the functions in our package have a help, which could be invoked by typing 'help' or 'doc', for example
+<pre style="margin: 2pt 0 2pt 0;">
+  doc rotating_3d_globe
+</pre>
+In addition to the help, you can have a look and modify the code.
+
+<br>
+<br>
+<h4><a class=name1 name=clrr>6.1. Choosing and editing a colour scale</a></h4>
+Sometimes, users complain that Matlab does not produce nicely looking images with varied colour scales.
+We believe that this is not true, look for example at our
+<a href=http://www.asu.cas.cz/~bezdek/vyzkum/rotating_3d_globe/figures/rotating_3d_globe_preview_Earth_topography_ETOPO2_004arcmin_GMT_globe_px3000.png
+target=_blank>
+high resolution example image</a>
+of Earth topography.
+In fact, a user can quickly and easily change and edit a color scale for 2D or 3D images.
+
+<br>
+<br>
+<h4><a class=name1 name=>Default Matlab colormap</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+Without defining a specific colour scale, a default Matlab colormap called 'Jet' is used.
+<pre>
+  %% Choosing and editing a colour scale: examples
+  model='egm2008'; nmax=500;    %selection of geopotential model
+  [lond,latd,gh]=compute_geopot_grids(model,nmax,'functional','gh');
+  [hc,hlab,name_png]=rotating_3d_globe(lond,latd,gh,...
+     'radius',6378e3,'units','m',...
+     'exaggeration_factor',1.3e4,...
+     'coastlines',1,...
+     'graph_label',...
+     sprintf('Geoid height (%s, nmax=%d)',upper(model),nmax),...
+     'clbr_limits',[-90 90],'clbr_tick',-100:20:100,...
+     'azimuth',70,'elevation',-5,...
+     'window_height',650);
+</pre>
+<td valign=top>
+<a href=private/fig06/rotating_3d_globe_preview_Geoid_height_EGM2008_nmax500_-20_-5_px0650.png>
+<img align=top src=private/fig06/tn200_rotating_3d_globe_preview_Geoid_height_EGM2008_nmax500_-20_-5_px0650.png>
+</a>
+</table>
+
+<br>
+<br>
+<h4><a class=name1 name=>Color palette files (cpt)</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+We included the package
+<a href=http://www.mathworks.com/matlabcentral/fileexchange/28943 target=_blank>Color Palette Tables (.cpt) for Matlab</a>
+by Kelly Kearney for an easy use of many cpt colour scales.
+This is an example of using a file 'BlueYellowRed.cpt' downloaded from
+<a href=http://soliton.vm.bytemark.co.uk/pub/cpt-city/views/div.html target=_blank>http://soliton.vm.bytemark.co.uk/pub/cpt-city/views/div.html</a>.
+<br>Add this line among the lines with optional arguments:
+<pre>
+     'cptcmap_pm','BlueYellowRed',...
+</pre>
+<td valign=top>
+<a href=private/fig06/rotating_3d_globe_preview_Geoid_height_EGM2008_nmax500_-20_-5_BlueYellowRed_px0650.png>
+<img align=top src=private/fig06/tn200_rotating_3d_globe_preview_Geoid_height_EGM2008_nmax500_-20_-5_BlueYellowRed_px0650.png>
+</a>
+</table>
+
+<br>
+<br>
+<h4><a class=name1 name=>Matlab built-in colormaps</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+Matlab itself has a set of built-in colour scales (type: doc colormap), we provided a functionality of using them.
+Add this line:
+<pre>
+     'clrmap','hsv',...
+</pre>
+Note the difference between the optional argument 'cptcmap_pm' used for loading cpt files,
+and 'clrmap' used here for loading Matlab colormap files.
+<td valign=top>
+<a href=private/fig06/rotating_3d_globe_preview_Geoid_height_EGM2008_nmax500_-20_-5_hsv_px0650.png>
+<img align=top src=private/fig06/tn200_rotating_3d_globe_preview_Geoid_height_EGM2008_nmax500_-20_-5_hsv_px0650.png>
+</a>
+</table>
+
+<br>
+<br>
+<h4><a class=name1 name=>User defined colormaps</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+Finally, it is very easy to modify an existing colour scale, as it is shown in the current figure.
+This is example of our own colour scale:
+<pre>
+     'clrmap','clrmap_byr1',...
+</pre>
+It was created in the following way. Open a graph, e.g. copy the code below the title 'Default Matlab colormap', paste it to your Matlab command line and press enter.
+The figure opens. Now type:
+<pre style="margin: 2pt 0 2pt 0;">
+  colormapeditor
+</pre>
+Put both the figure window and Colormap editor window side by side.
+In the Colormap editor, double click on a node pointer (small arrows) and change its colour. The change should immediately be applied to your grahp.
+One can shift the pointers, add new pointers simply by clicking, delete the existing pointers, etc., look at the help to Colormap editor, it's not complicated.
+When you are satisfied with your new colour scale, you can save it using our function:
+<pre style="margin: 2pt 0 2pt 0;">
+  save_clrmap 'name_of_your_colormap'
+</pre>
+The new colormap can be applied to your 2D and 3D graphs by using the optional argument:
+<pre>
+     'clrmap','name_of_your_colormap',...
+</pre>
+
+
+<td valign=top>
+<a href=private/fig06/rotating_3d_globe_preview_Geoid_height_EGM2008_nmax500_-20_-5_clrmap_byr1_px0650.png>
+<img align=top src=private/fig06/tn200_rotating_3d_globe_preview_Geoid_height_EGM2008_nmax500_-20_-5_clrmap_byr1_px0650.png>
+</a>
+</table>
+
+
+<br>
+<br>
+<h4><a class=name1 name=stl>6.2. Exporting STL file for 3D printers</a></h4>
+It is possible to fabricate a physical model representing the output of our visualization package by means of a 3D printer
+(e.g. the geiod with exaggerated variations).
+To produce an STL file, add an optional argument:
+<pre>
+     'stl_file_export',1,...
+</pre>
+
+In this file,
+<a href=./test_file_for_3d_printer.m>test_file_for_3d_printer.m</a>, you can find a Matlab script that produces an STL file of the EGM2008 model.
+There is a short description at the beginning of the script, first try to produce a small smooth model (nmax=30),
+then by increasing the nmax parameter you can obtain a nicely looking STL model of the geoid.
+
+<br>
+<br>
+To create the STL file, the function <a href=https://www.mathworks.com/matlabcentral/fileexchange/4512-surf2stl target=_blank>surf2stl.m</a> by Bill McDonald is used and acknowledged.
+
+<br>
+<br>
+<br>
+<h3><a class=name1 name=trbb>7. Troubleshooting</a></h3>
+
+<br>
+<h4><a class=name1 name=trbb1>7.1. An AVI video was produced instead of WMV</a></h4>
+If you selected 'wmv' video format and obtained an 'avi' file, then there is a problem with calling the external program "ffmpeg".
+To create videos in compressed formats WMV, MP4, xvid AVI, download, install and add to your Matlab path: <a href=http://www.ffmpeg.org/ target=_blank>ffmpeg</a>.
+
+<br>
+<br>
+<h4><a class=name1 name=trbb2>7.2. Animated GIF was not created</a></h4>
+To be able to produce animated GIFs within Matlab, you need the function
+<span class=a>rgb2ind</span>. In our experience, Matlab version R2011a has it in its basic module;
+with older version R2008a, either you use the image processing toolbox, or you can contact me and possibly I can help you.
+
+<br>
+<br>
+<h4><a class=name1 name=trbb3>7.3. Artefact line on a 3D image</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+Sometimes it may happen that on a 3D image there is an apparent artifact line, look at the first figure on the right.
+
+<br>
+<br>
+This is not an error, it is due to the fact that the interpolation function does not have data for the whole surface.
+When developing the package, we found a simple remedy in adding a copy of the first column in the visualized data matrix at the end,
+and also we add a copy of the first longitude value at the end.
+<p>
+For example, if you look at our TOPO elevation data, longitudes "lond_etopo2" are going from -180 till 180 deg,
+and the first and last columns of "elev_etopo2_km" matrix are the same;
+in this way, there is no line at the edge of the visualized elevation matrix
+(see the second figure).
+
+<br>
+<br>
+If the last duplicated column is deleted:
+<pre>
+     lond_etopo2=lond_etopo2(1:end-1);
+     elev_etopo2_km=elev_etopo2_km(:,1:end-1);
+</pre>
+then an artefact line appears in the figure.
+Have a look at this
+<a href=private/fig07/missing_data_line_01.m target=_blank>
+script</a>,
+which demonstrates the problem and produces the two images shown.
+
+
+<td valign=top>
+<a href=private/fig07/missing_data_line_01_incorrect.png>
+<img align=top src=private/fig07/tn200_missing_data_line_01_incorrect.png>
+</a>
+<br>
+<a href=private/fig07/missing_data_line_01_correct.png>
+<img align=top src=private/fig07/tn200_missing_data_line_01_correct.png>
+</a>
+</table>
+
+
+
+
+
+
+<!--
+<br>&clubs;
+<span class=a></span>
+-->
+<br>
+<br>
+<CENTER>
+<a href=manual.html>Go to top</a>
+<br>
+<br>
+Any comments or questions will be appreciated &ndash; if you have some, please contact:
+<font color=blue><b>Ales Bezdek</b></font> <<img src="private/email_normal_font_pruhledny.png" align="absbottom" border="0">>.
+
+<br>
+<br>
+Last modified: 6 March 2019
+</CENTER>
+
+
+</table>
+</body>
+</html>
+<!--
+<br>&clubs;
+<pre>
+</pre>
+
+<br>
+<br>
+<h4><a class=name1 name=>
+</a></h4>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top>
+<pre>
+</pre>
+<td valign=top>
+<a href=private/fig06/.png>
+<img align=top src=private/fig06/tn200_.png>
+</a>
+</table>
+
+<pre style="margin: 2pt 0 2pt 0;">
+</pre>
+
+<span class=a>
+</span>
+>
