@@ -43,19 +43,19 @@ for i=1:length(soub)
 
       % Read header
       fid=fopen(filename);
-      format=''; modelname=''; GM=0; ae=0; Lmax=0; errors=''; norm=''; tide='';
+      form=''; modelname=''; GM=0; ae=0; Lmax=0; errors=''; norm=''; tide='';
 
       s=fgets(fid);
       while(strncmp(s, 'end_of_head', 11) == 0 && sum(s)>=0)
-         if (strncmp(s, 'format', 6)), format=strtrim(s(6:end)); end;
-         if (strncmp(s, 'product_type', 12)), product_type=strtrim(s(13:end)); end;
-         if (strncmp(s, 'modelname', 9)), modelname=strtrim(s(10:end)); end;
-         if (strncmp(s, 'earth_gravity_constant', 22)), GM=str2double(s(23:end)); end;
-         if (strncmp(s, 'radius', 6)), ae=str2double(s(7:end)); end;
-         if (strncmp(s, 'max_degree', 10)), Lmax=str2double(s(11:end)); end;
-         if (strncmp(s, 'errors', 6)), errors=strtrim(s(7:end)); end;
-         if (strncmp(s, 'norm', 4)), norm=strtrim(s(5:end)); end;
-         if (strncmp(s, 'tide_system', 11)), tide=strtrim(s(12:end)); end;
+         if (strncmp(s, 'format', 6)), form=strtrim(s(7:end)); end
+         if (strncmp(s, 'product_type', 12)), product_type=strtrim(s(13:end)); end
+         if (strncmp(s, 'modelname', 9)), modelname=strtrim(s(10:end)); end
+         if (strncmp(s, 'earth_gravity_constant', 22)), GM=str2double(s(23:end)); end
+         if (strncmp(s, 'radius', 6)), ae=str2double(s(7:end)); end
+         if (strncmp(s, 'max_degree', 10)), Lmax=str2double(s(11:end)); end
+         if (strncmp(s, 'errors', 6)), errors=strtrim(s(7:end)); end
+         if (strncmp(s, 'norm', 4)), norm=strtrim(s(5:end)); end
+         if (strncmp(s, 'tide_system', 11)), tide=strtrim(s(12:end)); end
          s=fgets(fid);
       end
       if sum(s)<0
@@ -90,7 +90,7 @@ for i=1:length(soub)
          if strcmp(s(1:4),'gfc ')
             cnm(n,m)=x(3);
             snm(n,m)=x(4);
-            if (strcmp(header.errors, 'formal') || strcmp(header.errors,'calibrated') || strcmp(header.errors,'calibrated_and_formal')),
+            if contains(header.errors,'calibrated') || contains(header.errors,'formal')
                ecnm(n,m)=x(5);
                esnm(n,m)=x(6);
             end
@@ -105,14 +105,15 @@ for i=1:length(soub)
             i_t0=i_t0+1;
             cnm(n,m)=x(3);
             snm(n,m)=x(4);
-%            if strcmp(header.errors, 'formal') || strcmp(header.errors,'calibrated')
-               [yr,mn,dy]=ymd2cal(x(end)/1e4);
+            if isempty(form)
+                t(i_t0) = x(end);
+            else
+                t(i_t0) = x(end-1);
+            end
+               [yr,mn,dy]=ymd2cal(t(i_t0)/1e4);
                yrd=jd2yr(cal2jd(yr,mn,dy));
                cnm_t0(i_t0,:)=[n m yrd];
-%             elseif strcmp(header.errors,'calibrated_and_formal')
-%             elseif strcmp(header.errors,'no')
-%             end
-            if (strcmp(header.errors, 'formal') || strcmp(header.errors,'calibrated') || strcmp(header.errors,'calibrated_and_formal')),
+            if contains(header.errors,'calibrated') || contains(header.errors,'formal')
                ecnm(n,m)=x(5);
                esnm(n,m)=x(6);
             end
@@ -170,7 +171,7 @@ for i=1:length(soub)
       if ~exist(adr_kam,'file'), mkdir(adr_kam); end
       if ~exist([adr_kam 'gfc'],'file'), mkdir([adr_kam 'gfc']); end
       eval(sprintf('save %s%s.mat cnm snm ecnm esnm header modelname n_t0 n_trnd n_acos n_asin cnm_t0 cnm_trnd snm_trnd cnm_acos snm_acos cnm_asin snm_asin;',adr_kam,soub1));
-      movefile([adr_data soub1 '.gfc'],[adr_kam 'gfc']);
+      copyfile([adr_data soub1 '.gfc'],[adr_kam 'gfc']);
       fprintf('  Resulting file %s.mat was moved into folder: %s\n',soub1,adr_kam);
       fprintf('  Original file  %s.gfc was moved into folder: %sgfc\n',soub1,adr_kam);
    end
