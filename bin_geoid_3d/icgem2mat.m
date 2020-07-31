@@ -75,8 +75,22 @@ for i=1:length(soub)
       i_acos=0; %pocet clenu 
       i_asin=0; %pocet clenu 
       i_gfc=0;
-      cnm_t0=[]; cnm_trnd=[]; snm_trnd=[]; cnm_acos=[]; snm_acos=[]; cnm_asin=[]; snm_asin=[]; 
+      cnm_t0=[]; cnm_trnd=[]; snm_trnd=[]; cnm_acos=[]; snm_acos=[]; cnm_asin=[]; snm_asin=[]; id = 1;
+      line1 = ftell(fid);
       
+    if ~isempty(form)
+        s=fgets(fid);
+        while (length(s)>3)
+            x=str2num(s(5:end));
+            if ~strcmp(s(1:4),'gfc ')
+                i_t0 = i_t0+1;
+                t(i_t0) = x(7);
+            end
+            s=fgets(fid);
+        end
+        t = unique(t); id = 1:length(t); M = containers.Map(t,id);
+        i_t0=0; fseek(fid,line1,'bof');
+    end
       s=fgets(fid);
       while (length(s)>3)
          x=str2num(s(5:end));
@@ -88,8 +102,8 @@ for i=1:length(soub)
          end
 %         disp(s(1:4))
          if strcmp(s(1:4),'gfc ')
-            cnm(n,m)=x(3);
-            snm(n,m)=x(4);
+            cnm(n,m,:)=x(3);
+            snm(n,m,:)=x(4);
             if contains(header.errors,'calibrated') || contains(header.errors,'formal')
                ecnm(n,m)=x(5);
                esnm(n,m)=x(6);
@@ -103,19 +117,21 @@ for i=1:length(soub)
                cnm_t0=zeros(i1,3);
             end
             i_t0=i_t0+1;
-            cnm(n,m)=x(3);
-            snm(n,m)=x(4);
             if isempty(form)
-                t(i_t0) = x(end);
+                time = x(end);
+                ti = 1;
             else
-                t(i_t0) = x(end-1);
+                time = x(end-1);
+                ti = M(time);
             end
-               [yr,mn,dy]=ymd2cal(t(i_t0)/1e4);
-               yrd=jd2yr(cal2jd(yr,mn,dy));
-               cnm_t0(i_t0,:)=[n m yrd];
+            [yr,mn,dy]=ymd2cal(time/1e4);
+            yrd=jd2yr(cal2jd(yr,mn,dy));
+            cnm_t0(i_t0,:)=[n m yrd];
+            cnm(n,m,ti)=x(3);
+            snm(n,m,ti)=x(4);
             if contains(header.errors,'calibrated') || contains(header.errors,'formal')
-               ecnm(n,m)=x(5);
-               esnm(n,m)=x(6);
+               ecnm(n,m,ti)=x(5);
+               esnm(n,m,ti)=x(6);
             end
          elseif strcmp(s(1:4),'trnd') || strcmp(s(1:3),'dot') 
             if isempty(cnm_trnd)
@@ -126,6 +142,10 @@ for i=1:length(soub)
                cnm_trnd=zeros(i1,3); snm_trnd=cnm_trnd;
             end
             i_trnd=i_trnd+1;
+            if ~isempty(form)
+                t = x(end-1);
+                t_trnd(i_trnd) = M(t);
+            end
             cnm_trnd(i_trnd,:)=[n m x(3)];
             snm_trnd(i_trnd,:)=[n m x(4)];
          elseif strcmp(s(1:4),'acos')
@@ -136,6 +156,10 @@ for i=1:length(soub)
                cnm_acos=zeros(i1,4); snm_acos=cnm_acos;
             end
             i_acos=i_acos+1;
+            if ~isempty(form)
+                t = x(end-2);
+                t_acos(i_acos) = M(t);
+            end
             cnm_acos(i_acos,:)=[n m x(3) x(end)];
             snm_acos(i_acos,:)=[n m x(4) x(end)];
          elseif strcmp(s(1:4),'asin')
@@ -146,6 +170,10 @@ for i=1:length(soub)
                cnm_asin=zeros(i1,4); snm_asin=cnm_asin;
             end
             i_asin=i_asin+1;
+            if ~isempty(form)
+                t = x(end-2);
+                t_asin(i_asin) = M(t);
+            end
             cnm_asin(i_asin,:)=[n m x(3) x(end)];
             snm_asin(i_asin,:)=[n m x(4) x(end)];
          else
@@ -154,15 +182,34 @@ for i=1:length(soub)
          s=fgets(fid);
       end
       fclose(fid);
-
+      
+      % vymenit radky za dalsi dimenzi
+%       if ~isempty(form)
+%         for i = 1:length(t_trnd)
+%             for j = 1:max(id)
+%             cnm_tr(:,:,t_trnd(i)) = cnm_trnd(i,:);
+%             end
+%         end
+%         for i = 1:length(t_acos)
+%             for j = 1:max(id)
+%             cnm_ac(:,:,t_acos(i)) = cnm_acos(i,:);
+%             end
+%         end
+%         for i = 1:length(t_asin)
+%             for j = 1:max(id)
+%             cnm_as(:,:,t_asin(i)) = cnm_asin(i,:);
+%             end
+%         end
+%       end
+      
       modelname=header.modelname;
 
       %it is possible to limit the maximum degree read from the gfc file 
       n_gfc=i_gfc; n_t0=i_t0; n_trnd=i_trnd; n_acos=i_acos; n_asin=i_asin; 
-      if n_t0; cnm_t0=cnm_t0(1:n_t0,:); end
-      if n_trnd; cnm_trnd=cnm_trnd(1:n_trnd,:); snm_trnd=snm_trnd(1:n_trnd,:); end
-      if n_acos; cnm_acos=cnm_acos(1:n_acos,:); snm_acos=snm_acos(1:n_acos,:); end
-      if n_asin; cnm_asin=cnm_asin(1:n_asin,:); snm_asin=snm_asin(1:n_asin,:); end
+      if n_t0; cnm_t0=cnm_t0(1:n_t0,:,:); end
+      if n_trnd; cnm_trnd=cnm_trnd(1:n_trnd,:,:); snm_trnd=snm_trnd(1:n_trnd,:); end
+      if n_acos; cnm_acos=cnm_acos(1:n_acos,:,:); snm_acos=snm_acos(1:n_acos,:); end
+      if n_asin; cnm_asin=cnm_asin(1:n_asin,:,:); snm_asin=snm_asin(1:n_asin,:); end
       if n_t0~=n_trnd || n_acos~=n_asin
          error_ab('Problem with numbers of TVG terms.');
       end
