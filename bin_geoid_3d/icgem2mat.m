@@ -88,12 +88,11 @@ for i=1:length(soub)
             end
             s=fgets(fid);
         end
-        y = unique(y); id = 1:length(y); T = containers.Map(y,id);
+        y = unique(y); y = sort(y); id = 1:length(y); T = containers.Map(y,id);
         % key for dates
         [yr,mn,dy]=ymd2cal(y/1e4);
         yrd=jd2yr(cal2jd(yr,mn,dy));
         yrd=round(yrd*10000)/10000;
-        M = containers.Map(yrd,id);
         i_t0=0; fseek(fid,line1,'bof');
     end
       s=fgets(fid);
@@ -155,7 +154,7 @@ for i=1:length(soub)
             snm_trnd(i_trnd,:)=[n m x(4)];
          elseif strcmp(s(1:4),'acos')
             if isempty(cnm_acos)
-               [status, result] = grep('-c','acos ', filename);
+               [status, result] = grep('-c','acos  ', filename);
                i1=str2double(result.result);
                if i1==0; error_ab('Problem with acos'); end
                cnm_acos=zeros(i1,4); snm_acos=cnm_acos;
@@ -169,7 +168,7 @@ for i=1:length(soub)
             snm_acos(i_acos,:)=[n m x(4) x(end)];
          elseif strcmp(s(1:4),'asin')
             if isempty(cnm_asin)
-               [status, result] = grep('-c','asin ', filename);
+               [status, result] = grep('-c','asin  ', filename);
                i1=str2double(result.result);
                if i1==0; error_ab('Problem with asin'); end
                cnm_asin=zeros(i1,4); snm_asin=cnm_asin;
@@ -189,7 +188,7 @@ for i=1:length(soub)
       fclose(fid);
       
       if ~isempty(form)
-        cnm_tr = zeros(length(unique(cnm_trnd(:,1)*100+cnm_trnd(:,2))),3,max(id)); snm_tr = cnm_tr;
+        cnm_tr = zeros(length(unique(cnm_trnd(:,1)*100+cnm_trnd(:,2))),3,max(id)); snm_tr = cnm_tr; cnm_t = cnm_tr;
         cnm_ac = zeros(length(unique(cnm_acos(:,1)*100+cnm_acos(:,2)+cnm_acos(:,4)))-2,4,max(id)); cnm_as = cnm_ac; snm_ac = cnm_ac; snm_as = cnm_ac;
         j = 1;
         cnm_tr(j,:,t_trnd(1)) = cnm_trnd(1,:);
@@ -200,6 +199,15 @@ for i=1:length(soub)
             end
             cnm_tr(j,:,t_trnd(i)) = cnm_trnd(i,:);
             snm_tr(j,:,t_trnd(i)) = snm_trnd(i,:);
+        end
+        %
+        j = 1;
+        cnm_t(j,:,t_trnd(1)) = cnm_t0(1,:);
+        for i = 2:length(t_trnd)
+            if cnm_t0(i-1,1) ~= cnm_t0(i,1) || cnm_t0(i-1,2) ~= cnm_t0(i,2)
+                j = j+1;
+            end
+            cnm_t(j,:,t_trnd(i)) = cnm_t0(i,:);
         end
         j = 1;
         cnm_ac(j,:,t_acos(1)) = cnm_acos(1,:);
@@ -229,10 +237,7 @@ for i=1:length(soub)
             snm_as(j,:,t_asin(i)) = snm_asin(i-1,:);
             snm_as(j+1,:,t_asin(i)) = snm_asin(i,:);
         end
-        cnm_trnd = cnm_tr; cnm_acos = cnm_ac; cnm_asin = cnm_as; snm_trnd = snm_tr; snm_acos = snm_ac; snm_asin = snm_as;
-      else
-          yrd = unique(cnm_t0(:,3));
-          M = containers.Map(yrd, 1:length(yrd));
+        cnm_trnd = cnm_tr; cnm_acos = cnm_ac; cnm_asin = cnm_as; snm_trnd = snm_tr; snm_acos = snm_ac; snm_asin = snm_as; cnm_t0 = cnm_t;
       end
 
       modelname=header.modelname;
