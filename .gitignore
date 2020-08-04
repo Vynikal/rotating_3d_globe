@@ -3,3 +3,4 @@
 *.mat
 bin_geoid_3d/icgem2mat_old.m
 *.asv
+*.png

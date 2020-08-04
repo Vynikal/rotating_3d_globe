@@ -255,7 +255,7 @@ for i=1:length(soub)
 
       if ~exist(adr_kam,'file'), mkdir(adr_kam); end
       if ~exist([adr_kam 'gfc'],'file'), mkdir([adr_kam 'gfc']); end
-      eval(sprintf('save %s%s.mat cnm snm ecnm esnm header modelname n_t0 n_trnd n_acos n_asin cnm_t0 cnm_trnd snm_trnd cnm_acos snm_acos cnm_asin snm_asin M;',adr_kam,soub1));
+      eval(sprintf('save %s%s.mat cnm snm ecnm esnm header modelname n_t0 n_trnd n_acos n_asin cnm_t0 cnm_trnd snm_trnd cnm_acos snm_acos cnm_asin snm_asin;',adr_kam,soub1));
       copyfile([adr_data soub1 '.gfc'],[adr_kam 'gfc']);
       fprintf('  Resulting file %s.mat was moved into folder: %s\n',soub1,adr_kam);
       fprintf('  Original file  %s.gfc was moved into folder: %sgfc\n',soub1,adr_kam);
