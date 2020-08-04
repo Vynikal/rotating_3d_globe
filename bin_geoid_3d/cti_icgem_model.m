@@ -15,7 +15,7 @@ function [cnm, snm, header, modelname]=cti_icgem_model(filename,nmax,t_yr,vararg
 
 
 global nmax2 filename2 t_yr2 seasonal2
-global cnm2 snm2 header2 modelname2 n_t0 n_trnd n_acos n_asin cnm_t0 cnm_trnd snm_trnd cnm_acos snm_acos cnm_asin snm_asin yrs y
+global cnm2 snm2 header2 modelname2 n_t0 n_trnd n_acos n_asin cnm_t0 cnm_trnd snm_trnd cnm_acos snm_acos cnm_asin snm_asin yrs y1
 % ecnm esnm: zatim odtud neexportuju
 global cnm0 snm0
 
@@ -127,7 +127,7 @@ if ~strcmp(filename,filename2) || nmax2~=nmax || t_yr2<0
    t_yr2=-1;
 end
 
-
+ys = [];
 if t_yr2~=t_yr || seasonal2~=seasonal
    cnm=cnm0; snm=snm0;
    yrs = sort(unique(cnm_t0(:,3,:)));
@@ -139,21 +139,31 @@ if t_yr2~=t_yr || seasonal2~=seasonal
     end
     y = y + 1;
    end
-   y = y-1;
+   y1 = y-1;
    for i=1:n_trnd
+      y = y1;
+      while cnm_trnd(i,1,y) == 0
+          y = y-1;
+      end
+      ys = [ys,y];
       n1=cnm_trnd(i,1,y);
       m1=cnm_trnd(i,2,y);
       i1= cnm_t0(:,1,y)==n1 & cnm_t0(:,2,y)==m1;
       t0_yr=cnm_t0(i1,3,y);
       trnd=cnm_trnd(i,3,y);
       dcnm=trnd*(t_yr-t0_yr);
-      cnm(n1,m1,y)=cnm(n1,m1,y)+dcnm;
+      cnm(n1,m1,y1)=cnm(n1,m1,y)+dcnm;
       trnd=snm_trnd(i,3,y);
       dsnm=trnd*(t_yr-t0_yr);
-      snm(n1,m1,y)=snm(n1,m1,y)+dsnm;
+      snm(n1,m1,y1)=snm(n1,m1,y)+dsnm;
    end
    if seasonal
       for i=1:n_acos
+         y = y1;
+         while cnm_acos(i,1,y) == 0
+            y = y-1;
+         end
+         ys = [ys,y];
          n1=cnm_acos(i,1,y);
          m1=cnm_acos(i,2,y);
          i1= cnm_t0(:,1,y)==n1 & cnm_t0(:,2,y)==m1;
@@ -162,38 +172,39 @@ if t_yr2~=t_yr || seasonal2~=seasonal
          cos1=cnm_acos(i,3,y);
          per=cnm_acos(i,4,y);
          dcnm=cos1*cos(2*pi/per*(t_yr-t0_yr));
-         cnm(n1,m1,y)=cnm(n1,m1,y)+dcnm;
+         cnm(n1,m1,y1)=cnm(n1,m1,y)+dcnm;
 
          cos1=snm_acos(i,3,y);
          per=snm_acos(i,4,y);
          dsnm=cos1*cos(2*pi/per*(t_yr-t0_yr));
-         snm(n1,m1,y)=snm(n1,m1,y)+dsnm;
+         snm(n1,m1,y1)=snm(n1,m1,y)+dsnm;
 
          sin1=cnm_asin(i,3,y);
          per=cnm_asin(i,4,y);
          dcnm=sin1*sin(2*pi/per*(t_yr-t0_yr));
-         cnm(n1,m1,y)=cnm(n1,m1,y)+dcnm;
+         cnm(n1,m1,y1)=cnm(n1,m1,y)+dcnm;
 
          sin1=snm_asin(i,3,y);
          per=snm_asin(i,4,y);
          dsnm=sin1*sin(2*pi/per*(t_yr-t0_yr));
-         snm(n1,m1,y)=snm(n1,m1,y)+dsnm;
+         snm(n1,m1,y1)=snm(n1,m1,y)+dsnm;
       end
    else
       fprintf('  no seasonal components\n');
    end
    t_yr2=t_yr;
-   cnm = cnm(:,:,y); snm = snm(:,:,y);
+   cnm = cnm(:,:,y1); snm = snm(:,:,y1);
    cnm2=cnm; snm2=snm;
    seasonal2=seasonal;
 end
+ys = unique(ys);
 fprintf('  %s: time variability terms computed.\n',filename);
 yr=floor(t_yr);
 doy=365.25*(t_yr-yr);
 dtn=doy2dtn(yr,doy+1); %pridam pul den, aby mi 1/1/2005 nedalo 31/12/2004
 fprintf('     approximate epoch: %s\n',datestr(dtn));
 
-yrr = floor(yrs(y));
-doyr = 365.25*(yrs(y)-yrr);
+yrr = floor(yrs(y1));
+doyr = 365.25*(yrs(y1)-yrr);
 dtnr = doy2dtn(yrr,doyr+1);
 fprintf('     referential epoch: %s\n',datestr(dtnr));
