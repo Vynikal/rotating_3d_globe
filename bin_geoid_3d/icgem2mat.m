@@ -62,7 +62,7 @@ for i=1:length(soub)
          error_ab('Problem with reading the gfc file.')
       end
 
-      header=struct('product_type',product_type,'modelname',modelname,'earth_gravity_constant',GM,'radius',ae,'max_degree',Lmax,'errors',errors,'norm',norm,'tide_system',tide);
+      header=struct('product_type',product_type,'modelname',modelname,'earth_gravity_constant',GM,'radius',ae,'max_degree',Lmax,'errors',errors,'norm',norm,'tide_system',tide,'format',form);
 
       % read coefficients
       cnm=zeros(Lmax+1);
@@ -76,9 +76,9 @@ for i=1:length(soub)
       i_asin=0; %pocet clenu 
       i_gfc=0;
       cnm_t0=[]; cnm_trnd=[]; snm_trnd=[]; cnm_acos=[]; snm_acos=[]; cnm_asin=[]; snm_asin=[]; id = 1;
-      line1 = ftell(fid);
+      line1 = ftell(fid); % zapamatovat posledni radku
       
-    if ~isempty(form)
+    if ~isempty(form) %jestli format je definovan (tedy je v2), projit vsechna data a vypsat datumy
         s=fgets(fid);
         while (length(s)>3)
             x=str2num(s(5:end));
@@ -88,13 +88,10 @@ for i=1:length(soub)
             end
             s=fgets(fid);
         end
-        y = unique(y); y = sort(y); id = 1:length(y); T = containers.Map(y,id);
-        % key for dates
-        [yr,mn,dy]=ymd2cal(y/1e4);
-        yrd=jd2yr(cal2jd(yr,mn,dy));
-        yrd=round(yrd*10000)/10000;
-        i_t0=0; fseek(fid,line1,'bof');
+        y = unique(y); y = sort(y); id = 1:length(y); T = containers.Map(y,id); % mapa s indexy/datumy
+        i_t0=0; fseek(fid,line1,'bof'); % navrat na end_of_head
     end
+    
       s=fgets(fid);
       while (length(s)>3)
          x=str2num(s(5:end));
@@ -120,12 +117,12 @@ for i=1:length(soub)
                if i1==0; error_ab('Problem with t0'); end
                cnm_t0=zeros(i1,3);
             end
-            if isempty(form)
+            if isempty(form) % pro stary format pouze jeden cas
                 time = x(end);
                 ti = 1;
             else
                 time = x(end-1);
-                ti = T(time);
+                ti = T(time); % vyhleda v mape index pro dany rok
             end
             i_t0=i_t0+1;
             [yr,mn,dy]=ymd2cal(time/1e4);
@@ -187,6 +184,8 @@ for i=1:length(soub)
       end
       fclose(fid);
       
+      % pro format 2.0 preorganizovat matice do zadouciho tvaru
+      % v t_trnd/t_acos... jsou indexy tretiho rozmeru zavisle na epose
       if ~isempty(form)
         cnm_tr = zeros(length(unique(cnm_trnd(:,1)*100+cnm_trnd(:,2))),3,max(id)); snm_tr = cnm_tr; cnm_t = cnm_tr;
         cnm_ac = zeros(length(unique(cnm_acos(:,1)*100+cnm_acos(:,2)+cnm_acos(:,4)))-2,4,max(id)); cnm_as = cnm_ac; snm_ac = cnm_ac; snm_as = cnm_ac;
@@ -242,8 +241,8 @@ for i=1:length(soub)
 
       modelname=header.modelname;
 
-      %it is possible to limit the maximum degree read from the gfc file 
       n_gfc=i_gfc; n_t0=i_t0; n_trnd=i_trnd; n_acos=i_acos; n_asin=i_asin; 
+%       %it is possible to limit the maximum degree read from the gfc file 
 %       if n_t0; cnm_t0=cnm_t0(1:n_t0,:,:); end
 %       if n_trnd; cnm_trnd=cnm_trnd(1:n_trnd,:,:); snm_trnd=snm_trnd(1:n_trnd,:); end
 %       if n_acos; cnm_acos=cnm_acos(1:n_acos,:,:); snm_acos=snm_acos(1:n_acos,:); end

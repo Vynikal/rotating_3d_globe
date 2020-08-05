@@ -130,8 +130,9 @@ end
 ys = [];
 if t_yr2~=t_yr || seasonal2~=seasonal
    cnm=cnm0; snm=snm0;
+   % seradit jednotlive roky a podle nich indexovat treti rozmer
    yrs = sort(unique(cnm_t0(:,3,:)));
-   if yrs(1) == 0, yrs(1) = []; end
+   if yrs(1) == 0, yrs(1) = []; end  % prvni 'rok' muze byt nula, smazat
    y = 1;
    while t_yr > yrs(y)
     if y == length(yrs)
@@ -139,9 +140,11 @@ if t_yr2~=t_yr || seasonal2~=seasonal
     end
     y = y + 1;
    end
-   y1 = y-1;
+   y1 = y-1;  % hledany index je o 1 mensi
    for i=1:n_trnd
       y = y1;
+      % v pripade, ze nejsou vsechna data dostupna pro referencni epochu,
+      % pouzijou se drivejsi
       while cnm_trnd(i,1,y) == 0
           y = y-1;
       end
@@ -152,10 +155,10 @@ if t_yr2~=t_yr || seasonal2~=seasonal
       t0_yr=cnm_t0(i1,3,y);
       trnd=cnm_trnd(i,3,y);
       dcnm=trnd*(t_yr-t0_yr);
-      cnm(n1,m1,y1)=cnm(n1,m1,y)+dcnm;
+      cnm_v(n1,m1)=cnm(n1,m1,y)+dcnm;
       trnd=snm_trnd(i,3,y);
       dsnm=trnd*(t_yr-t0_yr);
-      snm(n1,m1,y1)=snm(n1,m1,y)+dsnm;
+      snm_v(n1,m1)=snm(n1,m1,y)+dsnm;
    end
    if seasonal
       for i=1:n_acos
@@ -172,38 +175,39 @@ if t_yr2~=t_yr || seasonal2~=seasonal
          cos1=cnm_acos(i,3,y);
          per=cnm_acos(i,4,y);
          dcnm=cos1*cos(2*pi/per*(t_yr-t0_yr));
-         cnm(n1,m1,y1)=cnm(n1,m1,y)+dcnm;
+         cnm_v(n1,m1)=cnm_v(n1,m1)+dcnm;
 
          cos1=snm_acos(i,3,y);
          per=snm_acos(i,4,y);
          dsnm=cos1*cos(2*pi/per*(t_yr-t0_yr));
-         snm(n1,m1,y1)=snm(n1,m1,y)+dsnm;
+         snm_v(n1,m1)=snm_v(n1,m1)+dsnm;
 
          sin1=cnm_asin(i,3,y);
          per=cnm_asin(i,4,y);
          dcnm=sin1*sin(2*pi/per*(t_yr-t0_yr));
-         cnm(n1,m1,y1)=cnm(n1,m1,y)+dcnm;
+         cnm_v(n1,m1)=cnm_v(n1,m1)+dcnm;
 
          sin1=snm_asin(i,3,y);
          per=snm_asin(i,4,y);
          dsnm=sin1*sin(2*pi/per*(t_yr-t0_yr));
-         snm(n1,m1,y1)=snm(n1,m1,y)+dsnm;
+         snm_v(n1,m1)=snm_v(n1,m1)+dsnm;
       end
    else
       fprintf('  no seasonal components\n');
    end
    t_yr2=t_yr;
-   cnm = cnm(:,:,y1); snm = snm(:,:,y1);
-   cnm2=cnm; snm2=snm;
+   cnm2 = cnm; snm2 = snm;
+   cnm = cnm_v; snm = snm_v;
    seasonal2=seasonal;
 end
-ys = unique(ys);
+ys = unique(ys); % vsechny pouzite epochy
 fprintf('  %s: time variability terms computed.\n',filename);
 yr=floor(t_yr);
 doy=365.25*(t_yr-yr);
-dtn=doy2dtn(yr,doy+1); %pridam pul den, aby mi 1/1/2005 nedalo 31/12/2004
+dtn=doy2dtn(yr,doy+1); % pridam pul den, aby mi 1/1/2005 nedalo 31/12/2004
 fprintf('     approximate epoch: %s\n',datestr(dtn));
 
+% referencni epocha
 yrr = floor(yrs(y1));
 doyr = 365.25*(yrs(y1)-yrr);
 dtnr = doy2dtn(yrr,doyr+1);
