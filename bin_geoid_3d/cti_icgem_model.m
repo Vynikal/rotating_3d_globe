@@ -136,7 +136,8 @@ if t_yr2~=t_yr || seasonal2~=seasonal
    y = 1;
    while t_yr > yrs(y)
     if y == length(yrs)
-        break
+       y = y + 1;
+       break
     end
     y = y + 1;
    end
