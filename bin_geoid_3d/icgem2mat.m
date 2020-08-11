@@ -78,7 +78,7 @@ for i=1:length(soub)
       cnm_t0=[]; cnm_trnd=[]; snm_trnd=[]; cnm_acos=[]; snm_acos=[]; cnm_asin=[]; snm_asin=[]; id = 1;
       line1 = ftell(fid); % zapamatovat posledni radku
       
-    if form == 'icgem2.0' %jestli format je v2, projit vsechna data a vypsat datumy
+    if strcmpi('icgem2.0',form) %jestli format je v2, projit vsechna data a vypsat datumy
         s=fgets(fid);
         while (length(s)>3)
             x=str2num(s(5:end));
@@ -141,7 +141,7 @@ for i=1:length(soub)
                cnm_trnd=zeros(i1,3); snm_trnd=cnm_trnd;
             end
             i_trnd=i_trnd+1;
-            if form == 'icgem2.0'
+            if strcmpi('icgem2.0',form)
                 t = x(end-1);
                 t_trnd(i_trnd) = T(t);
             end
@@ -155,7 +155,7 @@ for i=1:length(soub)
                cnm_acos=zeros(i1,4); snm_acos=cnm_acos;
             end
             i_acos=i_acos+1;
-            if form == 'icgem2.0'
+            if strcmpi('icgem2.0',form)
                 t = x(end-2);
                 t_acos(i_acos) = T(t);
             end
@@ -169,7 +169,7 @@ for i=1:length(soub)
                cnm_asin=zeros(i1,4); snm_asin=cnm_asin;
             end
             i_asin=i_asin+1;
-            if form == 'icgem2.0'
+            if strcmpi('icgem2.0',form)
                 t = x(end-2);
                 t_asin(i_asin) = T(t);
             end
@@ -184,7 +184,7 @@ for i=1:length(soub)
       
       % pro format 2.0 preorganizovat matice do zadouciho tvaru
       % v t_trnd/t_acos... jsou indexy tretiho rozmeru zavisle na epose
-      if form == 'icgem2.0'
+      if strcmpi('icgem2.0',form)
         cnm_tr = zeros(length(unique(cnm_trnd(:,1)*100+cnm_trnd(:,2))),3,max(id)); snm_tr = cnm_tr; cnm_t = cnm_tr;
         cnm_ac = zeros(length(unique(cnm_acos(:,1)*100+cnm_acos(:,2)+cnm_acos(:,4)))-2,4,max(id)); cnm_as = cnm_ac; snm_ac = cnm_ac; snm_as = cnm_ac;
         j = 1;
