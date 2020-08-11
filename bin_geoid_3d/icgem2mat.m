@@ -125,9 +125,7 @@ for i=1:length(soub)
                 ti = T(time); % vyhleda v mape index pro dany rok
             end
             i_t0=i_t0+1;
-            [yr,mn,dy]=ymd2cal(time/1e4);
-            yrd=jd2yr(cal2jd(yr,mn,dy));
-            cnm_t0(i_t0,:)=[n m yrd];
+            cnm_t0(i_t0,:)=[n m time];
             cnm(n,m,ti)=x(3);
             snm(n,m,ti)=x(4);
             if contains(header.errors,'calibrated') || contains(header.errors,'formal')

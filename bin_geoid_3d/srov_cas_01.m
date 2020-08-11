@@ -14,7 +14,8 @@ nmax=20;
 y=2005; m=10; d=15;
 epoch_yr=jd2yr(cal2jd(y,m,d));
 dtn=datenum(y,m,d);
-[cnm, snm, header]=cti_icgem_model(lower(ref_grav_model_name),nmax,epoch_yr,'seasonal',0);
+ymd=y*10000+m*100+d;
+[cnm, snm, header]=cti_icgem_model(lower(ref_grav_model_name),nmax,ymd);
 model=header.modelname;
 
 %% mapka gh
@@ -39,7 +40,7 @@ if 0
     return
 end
 %% mapka jen pro TVG
-[cnm_noSeas, snm_noSeas]=cti_icgem_model(lower(ref_grav_model_name),nmax,epoch_yr,'seasonal',0);
+[cnm_noSeas, snm_noSeas]=cti_icgem_model(lower(ref_grav_model_name),nmax,ymd,'seasonal',0);
 % odecteme slozku konst+trend, zbude nam sinusova tvg, rijnova tvg, ta je treba na obr. 8 v HP
 cnm_tvg=cnm-cnm_noSeas;
 snm_tvg=snm-snm_noSeas;
