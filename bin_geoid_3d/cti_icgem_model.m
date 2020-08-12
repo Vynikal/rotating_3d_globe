@@ -142,7 +142,7 @@ if t_yr2~=t_yr || seasonal2~=seasonal
    t_yr = jd2yr(cal2jd(yr,mn,dy));
    
    y = 1;
-   while t_yr > yrs(y)
+   while t_yr >= yrs(y)
     if y == length(yrs)
        y = y + 1;
        break
