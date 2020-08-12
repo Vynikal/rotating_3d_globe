@@ -29,11 +29,14 @@ end
 
 % Parsing optional arguments
 seasonal=1;
+period=0; %zakladni hodnota, pocita se se vsemi znamymi periodami
 i=1;
 while i<=length(varargin)
    switch lower(varargin{i})
       case 'seasonal'
          seasonal=varargin{i+1};
+      case 'period'
+         period=varargin{i+1};
    end
    i=i+2;
 end
@@ -111,16 +114,16 @@ if ~strcmp(filename,filename2) || nmax2~=nmax || t_yr2<0
          cnm_t0(~i1,:,:)=[];
       end
       if n_acos
-         i1=cnm_acos(:,1,1)<=nmax1 & cnm_acos(:,2,1)<=nmax1;
+         i1=cnm_acos(:,1,1,1)<=nmax1 & cnm_acos(:,2,1,1)<=nmax1;
          n_acos=sum(i1);
-         cnm_acos(~i1,:,:)=[];
-         snm_acos(~i1,:,:)=[];
+         cnm_acos(~i1,:,:,:)=[];
+         snm_acos(~i1,:,:,:)=[];
       end
       if n_asin
-         i1=cnm_asin(:,1,1)<=nmax1 & cnm_asin(:,2,1)<=nmax1;
+         i1=cnm_asin(:,1,1,1)<=nmax1 & cnm_asin(:,2,1,1)<=nmax1;
          n_asin=sum(i1);
-         cnm_asin(~i1,:,:)=[];
-         snm_asin(~i1,:,:)=[];
+         cnm_asin(~i1,:,:,:)=[];
+         snm_asin(~i1,:,:,:)=[];
       end
    end
    nmax2=nmax;
@@ -160,7 +163,6 @@ if t_yr2~=t_yr || seasonal2~=seasonal
       ys = [ys,y];
       n1=cnm_trnd(i,1,y);
       m1=cnm_trnd(i,2,y);
-      i1= cnm_t0(:,1,y)==n1 & cnm_t0(:,2,y)==m1;
       t0_yr=yrs(y);
       trnd=cnm_trnd(i,3,y);
       dcnm=trnd*(t_yr-t0_yr);
@@ -170,6 +172,12 @@ if t_yr2~=t_yr || seasonal2~=seasonal
       snm_v(n1,m1)=snm(n1,m1,y)+dsnm;
    end
    if seasonal
+      per = unique(cnm_acos(1,4,1,:)); per = sort(per); idp = 1:length(per); P = containers.Map(per,idp);
+      if ~period==0
+          peri = P(period);
+      else
+          peri = idp;
+      end
       for i=1:n_acos
          y = y1;
          while cnm_acos(i,1,y) == 0
@@ -178,28 +186,25 @@ if t_yr2~=t_yr || seasonal2~=seasonal
          ys = [ys,y];
          n1=cnm_acos(i,1,y);
          m1=cnm_acos(i,2,y);
-         i1= cnm_t0(:,1,y)==n1 & cnm_t0(:,2,y)==m1;
-         t0_yr=cnm_t0(i1,3,y);
+         t0_yr=yrs(y);
 
-         cos1=cnm_acos(i,3,y);
-         per=cnm_acos(i,4,y);
-         dcnm=cos1*cos(2*pi/per*(t_yr-t0_yr));
-         cnm_v(n1,m1)=cnm_v(n1,m1)+dcnm;
+         for j = peri
+            cos1=cnm_acos(i,3,y,j);
+            dcnm=cos1*cos(2*pi/per(j)*(t_yr-t0_yr));
+            cnm_v(n1,m1)=cnm_v(n1,m1)+dcnm;
 
-         cos1=snm_acos(i,3,y);
-         per=snm_acos(i,4,y);
-         dsnm=cos1*cos(2*pi/per*(t_yr-t0_yr));
-         snm_v(n1,m1)=snm_v(n1,m1)+dsnm;
+            cos1=snm_acos(i,3,y,j);
+            dsnm=cos1*cos(2*pi/per(j)*(t_yr-t0_yr));
+            snm_v(n1,m1)=snm_v(n1,m1)+dsnm;
 
-         sin1=cnm_asin(i,3,y);
-         per=cnm_asin(i,4,y);
-         dcnm=sin1*sin(2*pi/per*(t_yr-t0_yr));
-         cnm_v(n1,m1)=cnm_v(n1,m1)+dcnm;
+            sin1=cnm_asin(i,3,y,j);
+            dcnm=sin1*sin(2*pi/per(j)*(t_yr-t0_yr));
+            cnm_v(n1,m1)=cnm_v(n1,m1)+dcnm;
 
-         sin1=snm_asin(i,3,y);
-         per=snm_asin(i,4,y);
-         dsnm=sin1*sin(2*pi/per*(t_yr-t0_yr));
-         snm_v(n1,m1)=snm_v(n1,m1)+dsnm;
+            sin1=snm_asin(i,3,y,j);
+            dsnm=sin1*sin(2*pi/per(j)*(t_yr-t0_yr));
+            snm_v(n1,m1)=snm_v(n1,m1)+dsnm;
+         end
       end
    else
       fprintf('  no seasonal components\n');

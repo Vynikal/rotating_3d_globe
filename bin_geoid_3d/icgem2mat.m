@@ -185,8 +185,10 @@ for i=1:length(soub)
       % pro format 2.0 preorganizovat matice do zadouciho tvaru
       % v t_trnd/t_acos... jsou indexy tretiho rozmeru zavisle na epose
       if strcmpi('icgem2.0',form)
+        per = unique(cnm_acos(:,4)); per = sort(per); idp = 1:length(per); P = containers.Map(per,idp);
         cnm_tr = zeros(length(unique(cnm_trnd(:,1)*100+cnm_trnd(:,2))),3,max(id)); snm_tr = cnm_tr; cnm_t = cnm_tr;
-        cnm_ac = zeros(length(unique(cnm_acos(:,1)*100+cnm_acos(:,2)+cnm_acos(:,4)))-2,4,max(id)); cnm_as = cnm_ac; snm_ac = cnm_ac; snm_as = cnm_ac;
+        cnm_ac = zeros(length(unique(cnm_acos(:,1)*100+cnm_acos(:,2))),4,max(id),max(idp)); cnm_as = cnm_ac; snm_ac = cnm_ac; snm_as = cnm_ac;
+
         j = 1;
         cnm_tr(j,:,t_trnd(1)) = cnm_trnd(1,:);
         snm_tr(j,:,t_trnd(1)) = snm_trnd(1,:);
@@ -206,34 +208,29 @@ for i=1:length(soub)
             end
             cnm_t(j,:,t_trnd(i)) = cnm_t0(i,:);
         end
+
         j = 1;
-        cnm_ac(j,:,t_acos(1)) = cnm_acos(1,:);
-        cnm_ac(j+1,:,t_acos(1)) = cnm_acos(2,:);
-        snm_ac(j,:,t_acos(1)) = snm_acos(1,:);
-        snm_ac(j+1,:,t_acos(1)) = snm_acos(2,:);
-        for i = 3:length(t_acos)
+        cnm_ac(j,:,t_acos(1),P(cnm_acos(1,4))) = cnm_acos(1,:);
+        snm_ac(j,:,t_acos(1),P(snm_acos(1,4))) = snm_acos(1,:);
+        for i = 2:length(t_acos)
             if cnm_acos(i-1,1) ~= cnm_acos(i,1) || cnm_acos(i-1,2) ~= cnm_acos(i,2)
-                j = j+2;
+                j = j+1;
             end
-            cnm_ac(j,:,t_acos(i)) = cnm_acos(i-1,:);
-            cnm_ac(j+1,:,t_acos(i)) = cnm_acos(i,:);
-            snm_ac(j,:,t_acos(i)) = snm_acos(i-1,:);
-            snm_ac(j+1,:,t_acos(i)) = snm_acos(i,:);
+            cnm_ac(j,:,t_acos(i),P(cnm_acos(i,4))) = cnm_acos(i,:);
+            snm_ac(j,:,t_acos(i),P(snm_acos(i,4))) = snm_acos(i,:);
         end
+
         j = 1;
-        cnm_as(j,:,t_asin(1)) = cnm_asin(1,:);
-        cnm_as(j+1,:,t_asin(1)) = cnm_asin(2,:);
-        snm_as(j,:,t_asin(1)) = snm_asin(1,:);
-        snm_as(j+1,:,t_asin(1)) = snm_asin(2,:);
-        for i = 3:length(t_asin)
+        cnm_as(j,:,t_asin(1),P(cnm_asin(1,4))) = cnm_asin(1,:);
+        snm_as(j,:,t_asin(1),P(snm_asin(1,4))) = snm_asin(1,:);
+        for i = 2:length(t_asin)
             if cnm_asin(i-1,1) ~= cnm_asin(i,1) || cnm_asin(i-1,2) ~= cnm_asin(i,2)
-                j = j+2;
+                j = j+1;
             end
-            cnm_as(j,:,t_asin(i)) = cnm_asin(i-1,:);
-            cnm_as(j+1,:,t_asin(i)) = cnm_asin(i,:);
-            snm_as(j,:,t_asin(i)) = snm_asin(i-1,:);
-            snm_as(j+1,:,t_asin(i)) = snm_asin(i,:);
+            cnm_as(j,:,t_asin(i),P(cnm_asin(i,4))) = cnm_asin(i,:);
+            snm_as(j,:,t_asin(i),P(snm_asin(i,4))) = snm_asin(i,:);
         end
+
         cnm_trnd = cnm_tr; cnm_acos = cnm_ac; cnm_asin = cnm_as; snm_trnd = snm_tr; snm_acos = snm_ac; snm_asin = snm_as; cnm_t0 = cnm_t;
       end
 
