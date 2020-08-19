@@ -21,9 +21,12 @@
 % 
 %          cnm(3,1)
 % 
+% For v2.0 of icgem format, this script also reads unique epochs,
+% and stores the data in the third matrix dimension
 %
 % See also compute_geopot_grids
 
+% Jakub Vynikal, 08/2020, icgem2.0 support
 % Ales Bezdek, bezdek@asu.cas.cz, 11/2012
 
 clear

@@ -6,7 +6,10 @@ function [cnm, snm, header, modelname]=cti_icgem_model(filename,nmax,t_yr,vararg
 %     modely jsem prevedl na svuj format pomoci: icgem2mat*.m
 % [cnm snm header modelname]=cti_icgem_model(filename,nmax,t_yr,'seasonal',0) 
 %     bez sezonni slozky, jen stredni pole + trend
+%     argument 'period', implicitne 0 (pocita se vsemi sezonnimi periodami)
+%     moznost zvolit z dostupnych (0.5,1)
 
+% 8/2020 JV - podpora formatu 2.0 (vice epoch) a volby periody
 % 5/2018 pridavam clear nize, jinak si to zapamatovalo tvg cleny pro stat model
 % 10/2017 predelano znacne: jediny load, varargin, snad to pocita dobre
 %    uchovavam 
@@ -145,7 +148,7 @@ if t_yr2~=t_yr || seasonal2~=seasonal
    t_yr = jd2yr(cal2jd(yr,mn,dy));
    
    y = 1;
-   while t_yr >= yrs(y)
+   while roundn(t_yr,-3) > roundn(yrs(y),-3)
     if y == length(yrs)
        y = y + 1;
        break
