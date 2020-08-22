@@ -38,7 +38,7 @@ clf
 plot(dtn,cnm1(:,n+1,m+1)-0.9572e-6,'r.-')
 hold on
 plot(dtn,cnm2(:,n+1,m+1)-0.9572e-6,'.-')
-title(sprintf('Závislost koeficientu C%d%d na èase podle modelu %s',n,m,ref_grav_model_name))
+title(sprintf('Závislost koeficientu C%d%d na èase podle modelu %s',n,m,lomitka(upper(ref_grav_model_name))))
 date = [];
 for i = 1:length(dtn)
     if strncmp(datestr(dtn(i)),'01-Jan',6)
@@ -49,7 +49,6 @@ xticks(date)
 datetick('x','keepticks');
 grid
 legend 'konst+trend+sezonni' 'konst+trend'
-% title(sprintf('%s: koeficient C(3,0)',lomitka(upper(ref_grav_model_name))));
 
 grid on
 

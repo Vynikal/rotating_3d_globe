@@ -143,7 +143,7 @@ if t_yr2~=t_yr || seasonal2~=seasonal
       [yr,mn,dy]=ymd2cal(time(i)/1e4);
        yrs(i) = jd2yr(cal2jd(yr,mn,dy));
    end
-   dtn = ymd2dtn(num2str(t_yr));
+   dtn = ymd2dtn(t_yr);
    [yr,mn,dy]=ymd2cal(t_yr/1e4);
    t_yr = jd2yr(cal2jd(yr,mn,dy));
    

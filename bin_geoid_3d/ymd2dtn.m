@@ -1,6 +1,7 @@
 function dtn=ymd2dtn(ymd)
-% dtn=ymd2dtn(ymd) converts YYYYMMDD format into Matlab serial date number
+% dtn=ymd2dtn(ymd) converts YYYYMMDD.DDDD format into Matlab serial date number
 %
 % Back: ymd=datestr(dtn,'yyyymmdd');
-eval(sprintf('dtn=datenum(%s,%s,%s);',ymd(1:4),ymd(5:6),ymd(7:8)));
+str = num2str(ymd);
+eval(sprintf('dtn=datenum(%s,%s,%s);',str(1:4),str(5:6),str(7:end)));
 
